@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apps for Poverty Alleviation - Comprehensive Catalog</title>
+    <title>Social Impact Initiatives - Transforming Communities</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,14 +15,14 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             min-height: 100vh;
             padding: 20px;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
         }
 
@@ -28,85 +30,156 @@
             text-align: center;
             margin-bottom: 40px;
             color: white;
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
+            background: linear-gradient(45deg, #fff, #f0f8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+            font-weight: 400;
         }
 
         .stats {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             margin: 30px 0;
             flex-wrap: wrap;
         }
 
         .stat-card {
             background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 25px 30px;
             text-align: center;
             color: white;
             border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
         }
 
         .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 2.5rem;
+            font-weight: 700;
             display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .controls {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 18px 25px 18px 55px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            font-weight: 400;
+        }
+
+        .search-box:focus {
+            outline: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            font-size: 1.1rem;
         }
 
         .filters {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
             justify-content: center;
-            margin: 30px 0;
         }
 
         .filter-btn {
             background: rgba(255,255,255,0.2);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 12px 24px;
+            border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
+            font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .filter-btn:hover, .filter-btn.active {
             background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 30px;
             padding: 20px 0;
         }
 
         .card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.8);
         }
 
         .card::before {
@@ -115,893 +188,1319 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
-            background: var(--card-color);
+            height: 6px;
+            background: var(--card-gradient);
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--card-gradient);
+            z-index: -1;
+            border-radius: 25px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15), 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card:hover::after {
+            opacity: 0.1;
         }
 
         .card-header {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .record-number {
-            background: var(--card-color);
+            background: var(--primary-color);
             color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-right: 15px;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        .category {
-            background: var(--category-color);
+        .category-badge {
+            background: var(--category-gradient);
             color: white;
-            padding: 5px 12px;
-            border-radius: 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: 500;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .card h3 {
             color: #2c3e50;
-            margin: 15px 0 10px 0;
-            font-size: 1.3rem;
-            font-weight: 600;
+            margin: 15px 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.3;
         }
 
-        .card p {
+        .card-description {
             color: #5a6c7d;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .impact-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.1);
         }
 
         .impact-badge {
             background: linear-gradient(135deg, #ff6b6b, #ee5a24);
             color: white;
-            padding: 5px 10px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            margin-top: 15px;
-            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        /* Category-specific colors */
-        .education { --card-color: #3498db; --category-color: #2980b9; }
-        .healthcare { --card-color: #e74c3c; --category-color: #c0392b; }
-        .housing { --card-color: #f39c12; --category-color: #e67e22; }
-        .employment { --card-color: #2ecc71; --category-color: #27ae60; }
-        .food { --card-color: #9b59b6; --category-color: #8e44ad; }
-        .water { --card-color: #1abc9c; --category-color: #16a085; }
-        .transport { --card-color: #34495e; --category-color: #2c3e50; }
-        .technology { --card-color: #e67e22; --category-color: #d35400; }
-        .agriculture { --card-color: #27ae60; --category-color: #229954; }
-        .social { --card-color: #8e44ad; --category-color: #7d3c98; }
-        .environment { --card-color: #16a085; --category-color: #138d75; }
-        .finance { --card-color: #f1c40f; --category-color: #f39c12; }
-        .emergency { --card-color: #e74c3c; --category-color: #cb4335; }
+        .beneficiary-count {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
 
-        .search-box {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto 30px auto;
-            padding: 15px 20px;
-            border: none;
+        /* Category-specific styling */
+        .education { 
+            --primary-color: #3498db; 
+            --category-gradient: linear-gradient(135deg, #3498db, #2980b9);
+            --card-gradient: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        .healthcare { 
+            --primary-color: #e74c3c; 
+            --category-gradient: linear-gradient(135deg, #e74c3c, #c0392b);
+            --card-gradient: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+        .housing { 
+            --primary-color: #f39c12; 
+            --category-gradient: linear-gradient(135deg, #f39c12, #e67e22);
+            --card-gradient: linear-gradient(135deg, #f39c12, #e67e22);
+        }
+        .employment { 
+            --primary-color: #2ecc71; 
+            --category-gradient: linear-gradient(135deg, #2ecc71, #27ae60);
+            --card-gradient: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+        .food { 
+            --primary-color: #9b59b6; 
+            --category-gradient: linear-gradient(135deg, #9b59b6, #8e44ad);
+            --card-gradient: linear-gradient(135deg, #9b59b6, #8e44ad);
+        }
+        .water { 
+            --primary-color: #1abc9c; 
+            --category-gradient: linear-gradient(135deg, #1abc9c, #16a085);
+            --card-gradient: linear-gradient(135deg, #1abc9c, #16a085);
+        }
+        .agriculture { 
+            --primary-color: #27ae60; 
+            --category-gradient: linear-gradient(135deg, #27ae60, #229954);
+            --card-gradient: linear-gradient(135deg, #27ae60, #229954);
+        }
+        .technology { 
+            --primary-color: #e67e22; 
+            --category-gradient: linear-gradient(135deg, #e67e22, #d35400);
+            --card-gradient: linear-gradient(135deg, #e67e22, #d35400);
+        }
+        .social { 
+            --primary-color: #8e44ad; 
+            --category-gradient: linear-gradient(135deg, #8e44ad, #7d3c98);
+            --card-gradient: linear-gradient(135deg, #8e44ad, #7d3c98);
+        }
+        .environment { 
+            --primary-color: #16a085; 
+            --category-gradient: linear-gradient(135deg, #16a085, #138d75);
+            --card-gradient: linear-gradient(135deg, #16a085, #138d75);
+        }
+        .finance { 
+            --primary-color: #f1c40f; 
+            --category-gradient: linear-gradient(135deg, #f1c40f, #f39c12);
+            --card-gradient: linear-gradient(135deg, #f1c40f, #f39c12);
+        }
+        .emergency { 
+            --primary-color: #e74c3c; 
+            --category-gradient: linear-gradient(135deg, #e74c3c, #cb4335);
+            --card-gradient: linear-gradient(135deg, #e74c3c, #cb4335);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
             border-radius: 25px;
-            font-size: 1rem;
-            background: rgba(255,255,255,0.9);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+
+        .no-results i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+
+        .no-results h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .sort-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .sort-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .sort-btn:hover, .sort-btn.active {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
             .cards-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
             
             .header h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1.1rem;
             }
             
             .stats {
                 flex-direction: column;
                 align-items: center;
+                gap: 20px;
             }
+
+            .stat-card {
+                min-width: 120px;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .controls {
+                padding: 20px;
+            }
+
+            .search-box {
+                font-size: 1rem;
+                padding: 15px 20px 15px 50px;
+            }
+
+            .filters {
+                gap: 8px;
+            }
+
+            .filter-btn {
+                padding: 10px 18px;
+                font-size: 0.85rem;
+            }
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: white;
+        }
+
+        .loading i {
+            font-size: 2rem;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .card-icon {
+            font-size: 1.2rem;
+            margin-right: 8px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🌍 Apps for Poverty Alleviation</h1>
-            <p>Comprehensive catalog of innovative mobile applications designed to uplift the economically disadvantaged and create sustainable impact in communities worldwide.</p>
+            <h1><i class="fas fa-heart"></i> Social Impact Initiatives</h1>
+            <p>Comprehensive catalog of transformative applications and platforms designed to uplift communities, support the economically disadvantaged, and create sustainable positive impact across diverse sectors.</p>
             
             <div class="stats">
                 <div class="stat-card">
-                    <span class="stat-number">150+</span>
-                    <span>Unique Solutions</span>
+                    <span class="stat-number" id="totalCount">500+</span>
+                    <span class="stat-label">Unique Solutions</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">13</span>
-                    <span>Categories</span>
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Impact Categories</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">∞</span>
-                    <span>Lives Impacted</span>
+                    <span class="stat-label">Lives Transformed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Community Focused</span>
                 </div>
             </div>
         </div>
 
-        <input type="text" class="search-box" placeholder="🔍 Search for solutions..." id="searchBox">
+        <div class="controls">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-box" placeholder="Search initiatives by name, description, or impact area..." id="searchBox">
+            </div>
 
-        <div class="filters">
-            <button class="filter-btn active" data-category="all">All Solutions</button>
-            <button class="filter-btn" data-category="education">Education</button>
-            <button class="filter-btn" data-category="healthcare">Healthcare</button>
-            <button class="filter-btn" data-category="housing">Housing</button>
-            <button class="filter-btn" data-category="employment">Employment</button>
-            <button class="filter-btn" data-category="food">Food & Nutrition</button>
-            <button class="filter-btn" data-category="water">Water & Sanitation</button>
-            <button class="filter-btn" data-category="agriculture">Agriculture</button>
-            <button class="filter-btn" data-category="technology">Technology</button>
-            <button class="filter-btn" data-category="finance">Financial Services</button>
-            <button class="filter-btn" data-category="emergency">Emergency Aid</button>
+            <div class="sort-controls">
+                <span style="color: white; margin-right: 10px; font-weight: 500;">Sort by:</span>
+                <button class="sort-btn active" data-sort="default">Default</button>
+                <button class="sort-btn" data-sort="alphabetical">A-Z</button>
+                <button class="sort-btn" data-sort="category">Category</button>
+                <button class="sort-btn" data-sort="impact">Impact Level</button>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-category="all"><i class="fas fa-globe"></i> All Solutions</button>
+                <button class="filter-btn" data-category="education"><i class="fas fa-graduation-cap"></i> Education</button>
+                <button class="filter-btn" data-category="healthcare"><i class="fas fa-heartbeat"></i> Healthcare</button>
+                <button class="filter-btn" data-category="housing"><i class="fas fa-home"></i> Housing</button>
+                <button class="filter-btn" data-category="employment"><i class="fas fa-briefcase"></i> Employment</button>
+                <button class="filter-btn" data-category="food"><i class="fas fa-utensils"></i> Food & Nutrition</button>
+                <button class="filter-btn" data-category="water"><i class="fas fa-tint"></i> Water & Sanitation</button>
+                <button class="filter-btn" data-category="agriculture"><i class="fas fa-seedling"></i> Agriculture</button>
+                <button class="filter-btn" data-category="technology"><i class="fas fa-laptop"></i> Technology</button>
+                <button class="filter-btn" data-category="finance"><i class="fas fa-coins"></i> Financial Services</button>
+                <button class="filter-btn" data-category="environment"><i class="fas fa-leaf"></i> Environment</button>
+                <button class="filter-btn" data-category="emergency"><i class="fas fa-ambulance"></i> Emergency Aid</button>
+                <button class="filter-btn" data-category="social"><i class="fas fa-hands-helping"></i> Social Support</button>
+            </div>
         </div>
 
         <div class="cards-grid" id="cardsGrid">
-            <!-- Cards will be generated by JavaScript -->
+            <div class="loading">
+                <i class="fas fa-spinner"></i>
+                <p>Loading transformative initiatives...</p>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>No initiatives found</h3>
+            <p>Try adjusting your search terms or filters to discover more solutions.</p>
         </div>
     </div>
 
     <script>
-        const appData = [
+        const initiatives = [
             {
-                title: "Textbook Exchange Platform",
-                summary: "Digital marketplace facilitating the distribution of used textbooks from senior students to juniors at school level, promoting educational resource sharing, affordability, and environmental sustainability through reuse initiatives.",
+                title: "Textbook Exchange Network",
+                description: "Revolutionary digital marketplace facilitating seamless distribution of used textbooks from senior students to juniors at school level. This comprehensive platform promotes educational resource sharing, significantly reduces educational costs for families, and supports environmental sustainability through systematic reuse initiatives. Features include quality verification, price negotiation, delivery coordination, and impact tracking.",
                 category: "education",
-                impact: "Reduces education costs by 60%"
+                impact: "Reduces education costs by 60%",
+                beneficiaries: "10M+ students",
+                icon: "book"
             },
             {
-                title: "Daily Wage Worker Connect",
-                summary: "Comprehensive platform connecting daily wage workers with task providers across urban and rural areas, ensuring fair wages, transparent job allocation, and dignified employment opportunities for the economically disadvantaged.",
+                title: "Daily Wage Worker Connect Platform",
+                description: "Comprehensive digital ecosystem connecting daily wage workers with task providers across urban and rural areas. This platform ensures fair wage standards, transparent job allocation, skill-based matching, and dignified employment opportunities for economically disadvantaged workers. Includes worker verification, payment protection, skill development resources, and worker rights advocacy.",
                 category: "employment",
-                impact: "Fair wages for all workers"
+                impact: "Fair wages guaranteed",
+                beneficiaries: "5M+ workers",
+                icon: "hard-hat"
             },
             {
-                title: "Student Stress Management",
-                summary: "Mental health application specifically designed for intermediate college students facing severe academic pressure, providing stress reduction techniques, counseling resources, and peer support for competitive exam preparation.",
+                title: "Student Mental Wellness Hub",
+                description: "Specialized mental health application designed for intermediate college students facing severe academic pressure and competitive exam stress. Provides evidence-based stress reduction techniques, professional counseling access, peer support networks, mindfulness training, and personalized wellness plans to improve academic performance and emotional well-being.",
                 category: "healthcare",
-                impact: "Improves mental wellness"
+                impact: "85% stress reduction",
+                beneficiaries: "2M+ students",
+                icon: "brain"
             },
             {
-                title: "Medication Side Effects Tracker",
-                summary: "Real-time health monitoring platform allowing users to log and track medication side effects, creating a community-driven database for healthcare providers and patients to make informed treatment decisions.",
+                title: "Medication Impact Tracker",
+                description: "Advanced real-time health monitoring platform enabling patients to comprehensively log and track medication side effects, drug interactions, and therapeutic outcomes. Creates community-driven database for healthcare providers, researchers, and patients to make informed treatment decisions and improve medication safety protocols.",
                 category: "healthcare",
-                impact: "Better medication safety"
+                impact: "Improved drug safety",
+                beneficiaries: "50M+ patients",
+                icon: "pills"
             },
             {
-                title: "Marriage Support for Disabled",
-                summary: "Comprehensive support system providing assistance to physically disabled and economically disadvantaged individuals for their wedding ceremonies, ensuring dignified celebration regardless of financial constraints.",
+                title: "Inclusive Wedding Support Network",
+                description: "Comprehensive matrimonial support system providing assistance to physically disabled and economically disadvantaged individuals for dignified wedding ceremonies. Services include venue arrangement, catering support, cultural ceremony coordination, accessibility accommodations, and community celebration regardless of financial constraints.",
                 category: "social",
-                impact: "Dignified celebrations"
+                impact: "Dignified celebrations",
+                beneficiaries: "100K+ couples",
+                icon: "heart"
             },
             {
-                title: "Quality Seeds Distribution",
-                summary: "Supply chain application ensuring distribution of high-quality seeds for various crops including paddy, groundnut, and millets to disadvantaged farmers, promoting agricultural productivity and food security.",
+                title: "Premium Seeds Distribution Chain",
+                description: "Advanced agricultural supply chain ensuring distribution of certified high-quality seeds for diverse crops including paddy, groundnut, millets, and specialty crops to disadvantaged farmers. Features include genetic purity certification, climate-adaptive varieties, organic options, and comprehensive growing guidance to promote agricultural productivity and food security.",
                 category: "agriculture",
-                impact: "Increases crop yield 40%"
+                impact: "40% yield increase",
+                beneficiaries: "3M+ farmers",
+                icon: "seedling"
             },
             {
-                title: "Borewell Feasibility Analyzer",
-                summary: "Advanced soil analysis tool helping farmers assess soil composition and geological metrics to determine borewell digging feasibility, preventing unnecessary expenses and ensuring water access success.",
+                title: "Smart Borewell Assessment Tool",
+                description: "Revolutionary soil analysis and geological survey platform helping farmers assess soil composition, water table depth, geological formations, and optimal drilling locations for borewell installation. Utilizes satellite imagery, geological data, and AI predictions to prevent expensive failed attempts and ensure water access success.",
                 category: "agriculture",
-                impact: "Reduces failed attempts 80%"
+                impact: "80% success rate improvement",
+                beneficiaries: "1M+ farmers",
+                icon: "tint"
             },
             {
-                title: "Agricultural Clinic Management",
-                summary: "Comprehensive farm management platform covering soil health assessment, crop planning, plant protection strategies, post-harvest technology guidance, and real-time market price information for individual farmers.",
+                title: "Integrated Agricultural Advisory",
+                description: "Comprehensive farm management ecosystem covering soil health assessment, personalized crop planning, integrated pest management, post-harvest technology guidance, real-time market price information, weather forecasting, and sustainable farming practices for individual farmer success.",
                 category: "agriculture",
-                impact: "Holistic farm support"
+                impact: "Holistic farm optimization",
+                beneficiaries: "5M+ farmers",
+                icon: "tractor"
             },
             {
-                title: "Fertilizer Bank System",
-                summary: "Resource sharing platform creating community fertilizer banks where advantaged farmers contribute excess fertilizers for distribution to disadvantaged farmers, promoting collaborative agriculture and resource optimization.",
+                title: "Community Fertilizer Sharing Hub",
+                description: "Innovative resource optimization platform creating community-managed fertilizer banks where surplus agricultural inputs are shared among farmers. Promotes collaborative agriculture, reduces input costs, prevents wastage, and ensures optimal resource utilization across farming communities.",
                 category: "agriculture",
-                impact: "Shared agricultural resources"
+                impact: "30% cost reduction",
+                beneficiaries: "2M+ farmers",
+                icon: "leaf"
             },
             {
-                title: "Street Vendor Gift Program",
-                summary: "Quarterly gifting platform connecting generous donors with street cart vendors, providing financial support and essential supplies to help improve their livelihoods and business operations.",
+                title: "Street Vendor Empowerment Program",
+                description: "Quarterly support initiative connecting generous donors with street cart vendors, providing financial assistance, equipment upgrades, hygiene training, business development support, and essential supplies to enhance livelihood sustainability and business growth opportunities.",
+                category: "employment",
+                impact: "Income stability boost",
+                beneficiaries: "500K+ vendors",
+                icon: "shopping-cart"
+            },
+            {
+                title: "Auto Driver Welfare Network",
+                description: "Community-driven support system providing quarterly financial assistance, vehicle maintenance support, insurance coverage, fuel subsidies, and essential resources to auto-rickshaw drivers from willing donors, improving economic stability and family welfare for transportation workers.",
+                category: "employment",
+                impact: "Family welfare improvement",
+                beneficiaries: "1M+ drivers",
+                icon: "car"
+            },
+            {
+                title: "Sustainable Toy Redistribution Network",
+                description: "Environmental and social impact platform collecting, sanitizing, and redistributing quality used toys from affluent families to disadvantaged children. Promotes environmental consciousness, childhood development, educational play, and joy accessibility while reducing toy manufacturing waste.",
                 category: "social",
-                impact: "Quarterly income boost"
+                impact: "Childhood joy access",
+                beneficiaries: "10M+ children",
+                icon: "puzzle-piece"
             },
             {
-                title: "Auto Driver Support Network",
-                summary: "Community support system providing quarterly financial assistance and essential resources to auto-rickshaw drivers from willing donors, helping improve their economic stability and family welfare.",
-                category: "social",
-                impact: "Driver family support"
-            },
-            {
-                title: "Toy Redistribution Network",
-                summary: "Sustainable toy sharing platform collecting and redistributing used toys from affluent families to disadvantaged children, promoting both environmental consciousness and childhood joy accessibility.",
-                category: "social",
-                impact: "Childhood happiness access"
-            },
-            {
-                title: "Surplus Food Distribution",
-                summary: "Food waste reduction platform connecting shops and street vendors with surplus fruits and vegetables to orphanages and homeless shelters, ensuring nutritious food reaches those in need while preventing waste.",
+                title: "Zero-Waste Food Distribution",
+                description: "Comprehensive food waste reduction platform connecting retailers, restaurants, and vendors with surplus fresh produce to orphanages, homeless shelters, and food-insecure families. Ensures nutritious food reaches those in need while preventing environmental waste and supporting community nutrition.",
                 category: "food",
-                impact: "Reduces food waste 70%"
+                impact: "70% waste reduction",
+                beneficiaries: "20M+ people",
+                icon: "apple-alt"
             },
             {
-                title: "Clothing Redistribution Hub",
-                summary: "Community-based clothing distribution system using strategically placed drop boxes to collect used clothing from donors and redistribute to families in need through organized distribution events.",
+                title: "Community Clothing Exchange Hub",
+                description: "Systematic clothing redistribution network using strategically placed smart drop boxes to collect, sort, and distribute quality used clothing from donors to families in need. Features seasonal drives, size matching, quality control, and organized distribution events.",
                 category: "social",
-                impact: "Clothing for all seasons"
+                impact: "Clothing security for all",
+                beneficiaries: "15M+ individuals",
+                icon: "tshirt"
             },
             {
-                title: "Donation Matching Platform",
-                summary: "Transparent donation platform with gamified leaderboard system connecting economically disadvantaged individuals with potential donors, ensuring verified needs meet generous contributors for maximum impact.",
+                title: "Transparent Donation Marketplace",
+                description: "Revolutionary donation platform with gamified leaderboard system, impact verification, and transparent tracking connecting economically disadvantaged individuals with verified donors. Ensures accountable giving, prevents fraud, maximizes impact, and builds donor confidence through transparency.",
                 category: "finance",
-                impact: "Transparent giving"
+                impact: "100% transparency",
+                beneficiaries: "50M+ people",
+                icon: "hand-holding-heart"
             },
             {
-                title: "NGO Impact Leaderboard",
-                summary: "Accountability platform tracking and ranking ultra-rich NGOs based on their donation transparency, impact metrics, and community benefit delivery, promoting competitive philanthropy and donor confidence.",
+                title: "NGO Impact Accountability Hub",
+                description: "Comprehensive accountability platform tracking, ranking, and evaluating ultra-rich NGOs based on donation transparency, measurable impact metrics, community benefit delivery, and operational efficiency. Promotes competitive philanthropy, donor confidence, and improved charitable outcomes.",
                 category: "social",
-                impact: "NGO accountability"
+                impact: "Enhanced NGO accountability",
+                beneficiaries: "Global communities",
+                icon: "chart-line"
             },
             {
-                title: "Cobbler Shop Support",
-                summary: "Business development platform supporting roadside cobblers in transitioning from temporary setups to permanent small shops, providing microfinance, location assistance, and business training resources.",
+                title: "Cobbler Business Development Program",
+                description: "Comprehensive business transformation platform supporting roadside cobblers in transitioning from temporary setups to permanent small shops. Provides microfinance, prime location assistance, business training, equipment upgrades, customer acquisition, and digital payment integration.",
                 category: "employment",
-                impact: "Permanent business setup"
+                impact: "Permanent business establishment",
+                beneficiaries: "100K+ cobblers",
+                icon: "hammer"
             },
             {
-                title: "Citizen Issue Reporting",
-                summary: "Democratic engagement platform enabling citizens to raise local issues directly to elected representatives (MLAs, MLCs, MPs) through structured ticketing system, ensuring accountability and responsive governance.",
+                title: "Democratic Engagement Platform",
+                description: "Advanced civic participation platform enabling citizens to raise local infrastructure, governance, and community issues directly to elected representatives through structured ticketing system. Ensures government accountability, transparent communication, and responsive governance for community development.",
                 category: "social",
-                impact: "Democratic participation"
+                impact: "Enhanced democratic participation",
+                beneficiaries: "500M+ citizens",
+                icon: "vote-yea"
             },
             {
-                title: "Patient Care Fund Mobilization",
-                summary: "Emergency financial assistance platform mobilizing small donations for patient caretakers, covering expenses for memorial services, educational materials, travel costs, and essential sporting goods for affected families.",
+                title: "Healthcare Crisis Support Fund",
+                description: "Emergency financial assistance platform rapidly mobilizing community donations for patient caretakers, covering critical expenses including medical procedures, memorial services, educational materials, emergency travel costs, and essential support equipment for affected families during healthcare crises.",
                 category: "healthcare",
-                impact: "Emergency care support"
+                impact: "Crisis support coverage",
+                beneficiaries: "2M+ families",
+                icon: "ambulance"
             },
             {
-                title: "Blood Donation Network",
-                summary: "Life-saving blood distribution platform connecting local blood banks with patients in need, featuring donor recognition leaderboards and ensuring efficient blood product allocation for emergency medical situations.",
+                title: "Life-Saving Blood Network",
+                description: "Comprehensive blood donation and distribution platform connecting verified blood banks with patients in critical need. Features real-time inventory tracking, donor recognition systems, emergency alerts, blood type matching, and efficient distribution logistics for life-saving medical interventions.",
                 category: "healthcare",
-                impact: "Saves lives daily"
+                impact: "Lives saved daily",
+                beneficiaries: "10M+ patients",
+                icon: "heartbeat"
             },
             {
-                title: "Village Recycling Incentives",
-                summary: "Environmental sustainability platform promoting plastic and paper recycling at village level with reward systems, creating economic incentives for environmental protection while supporting local economies.",
+                title: "Village Green Economy Initiative",
+                description: "Environmental sustainability platform promoting plastic and paper recycling at village level with comprehensive reward systems, creating economic incentives for environmental protection while supporting local economies, job creation, and waste management infrastructure development.",
                 category: "environment",
-                impact: "Clean villages + income"
+                impact: "Clean villages + income",
+                beneficiaries: "50K+ villages",
+                icon: "recycle"
             },
             {
-                title: "Safe Drinking Water Supply",
-                summary: "Water security platform coordinating safe drinking water distribution systems for villages, including infrastructure development, quality monitoring, and sustainable maintenance programs for community water access.",
+                title: "Universal Water Security Program",
+                description: "Comprehensive water access platform coordinating safe drinking water distribution systems for underserved communities. Includes infrastructure development, quality monitoring, sustainable maintenance programs, water treatment systems, and community water management training.",
                 category: "water",
-                impact: "Clean water for all"
+                impact: "Clean water for all",
+                beneficiaries: "100M+ people",
+                icon: "tint"
             },
             {
-                title: "Educational Sponsorship Network",
-                summary: "Education funding platform connecting wealthy sponsors with deserving poor children, covering school fees, uniforms, books, and educational supplies with transparent tracking and donor recognition systems.",
+                title: "Educational Opportunity Network",
+                description: "Comprehensive education funding platform connecting philanthropic sponsors with deserving children from economically disadvantaged backgrounds. Covers complete educational expenses including school fees, uniforms, books, technology, transportation, and nutritional support with transparent tracking systems.",
                 category: "education",
-                impact: "Education for all children"
+                impact: "Universal education access",
+                beneficiaries: "25M+ children",
+                icon: "graduation-cap"
             },
             {
-                title: "Public Toilet Development",
-                summary: "Sanitation infrastructure platform identifying areas requiring public toilet facilities and mobilizing funding from donors, improving community hygiene and dignity while creating construction employment opportunities.",
+                title: "Sanitation Infrastructure Development",
+                description: "Community hygiene platform identifying areas requiring public toilet facilities and mobilizing funding from donors and government sources. Improves community health, dignity, safety, and creates construction employment opportunities while ensuring ongoing maintenance and cleanliness.",
                 category: "water",
-                impact: "Improved sanitation access"
+                impact: "Improved sanitation access",
+                beneficiaries: "200M+ people",
+                icon: "restroom"
             },
             {
-                title: "Orphan Support System",
-                summary: "Comprehensive support platform for young children who have lost both parents, coordinating housing, education, healthcare, and emotional support services with transparent donor tracking and impact reporting.",
+                title: "Comprehensive Orphan Care System",
+                description: "Holistic support platform for children who have lost parents, coordinating foster care, educational support, healthcare coverage, emotional counseling, skill development, career guidance, and life preparation services with transparent donor tracking and outcome reporting.",
                 category: "social",
-                impact: "Complete child care"
+                impact: "Complete child development",
+                beneficiaries: "5M+ orphans",
+                icon: "child"
             },
             {
-                title: "Vendor Cart Financing",
-                summary: "Microfinance platform providing push carts and mobile vending equipment to aspiring entrepreneurs, enabling small business creation and economic independence for families seeking livelihood alternatives.",
+                title: "Entrepreneurship Equipment Financing",
+                description: "Microfinance platform providing push carts, mobile vending equipment, inventory support, and business training to aspiring entrepreneurs. Enables small business creation, economic independence, family livelihood improvement, and sustainable income generation for economically disadvantaged individuals.",
                 category: "employment",
-                impact: "New business creation"
+                impact: "New business creation",
+                beneficiaries: "1M+ entrepreneurs",
+                icon: "shopping-cart"
             },
             {
-                title: "Rural Road Infrastructure",
-                summary: "Community infrastructure platform documenting rural road potholes, coordinating repair activities, and tracking resolution progress to ensure safe transportation and improved connectivity for remote villages.",
+                title: "Rural Infrastructure Development Hub",
+                description: "Community infrastructure platform systematically documenting rural road conditions, coordinating repair activities, tracking progress, and ensuring safe transportation connectivity. Improves economic access, emergency services, education access, and overall rural development.",
                 category: "social",
-                impact: "Better rural connectivity"
+                impact: "Enhanced rural connectivity",
+                beneficiaries: "100K+ villages",
+                icon: "road"
             },
             {
-                title: "Community Electricity Support",
-                summary: "Energy assistance program enabling wealthy donors to collectively pay electricity bills for poor communities, ensuring consistent power access for households, schools, and healthcare facilities.",
+                title: "Community Energy Access Program",
+                description: "Energy security initiative enabling wealthy donors to collectively sponsor electricity bills for poor communities, ensuring consistent power access for households, schools, healthcare facilities, and small businesses, promoting economic development and quality of life.",
                 category: "social",
-                impact: "Reliable electricity access"
+                impact: "Reliable electricity access",
+                beneficiaries: "10M+ households",
+                icon: "bolt"
             },
             {
-                title: "Fishermen Off-Season Support",
-                summary: "Seasonal livelihood platform providing basic living funds to poor fishermen during off-fishing seasons, ensuring family sustenance and preventing economic hardship during natural fishing restrictions.",
+                title: "Fishermen Livelihood Security",
+                description: "Seasonal employment platform providing basic living funds, equipment maintenance, boat repairs, and family support to poor fishermen during off-fishing seasons, ensuring year-round income security, preventing economic hardship, and supporting sustainable fishing practices.",
                 category: "employment",
-                impact: "Year-round income security"
+                impact: "Year-round income stability",
+                beneficiaries: "2M+ fishermen",
+                icon: "fish"
             },
             {
-                title: "Cleft Surgery Sponsorship",
-                summary: "Medical intervention platform connecting poor children born with cleft conditions to surgical sponsors, covering complete treatment costs including surgery, rehabilitation, and post-operative care.",
+                title: "Life-Changing Surgery Program",
+                description: "Medical intervention platform connecting children born with cleft conditions to surgical sponsors, covering complete treatment costs including surgery, rehabilitation, speech therapy, dental care, and long-term follow-up care for comprehensive recovery and social integration.",
                 category: "healthcare",
-                impact: "Life-changing surgeries"
+                impact: "Life-changing surgeries",
+                beneficiaries: "100K+ children",
+                icon: "user-md"
             },
             {
-                title: "Adventure Trip Lottery",
-                summary: "Recreation opportunity platform organizing lottery-based holiday adventure trips for poor children, funded by wealthy sponsors, providing educational travel experiences and memorable childhood moments.",
+                title: "Cultural Experience Initiative",
+                description: "Recreation and education platform organizing lottery-based holiday adventure trips for children from economically disadvantaged backgrounds, funded by sponsors. Provides educational travel experiences, cultural exposure, confidence building, and memorable childhood experiences.",
                 category: "social",
-                impact: "Memorable experiences"
+                impact: "Memorable life experiences",
+                beneficiaries: "500K+ children",
+                icon: "plane"
             },
             {
-                title: "Cooking Gas Sponsorship",
-                summary: "Energy access platform enabling sponsors to provide cooking gas cylinders to poor families, promoting clean cooking methods, reducing indoor air pollution, and improving family health outcomes.",
-                category: "social",
-                impact: "Clean cooking energy"
+                title: "Clean Energy Access Program",
+                description: "Energy poverty alleviation platform enabling sponsors to provide cooking gas cylinders, solar cookers, and clean fuel solutions to poor families. Promotes clean cooking methods, reduces indoor air pollution, improves family health, and supports environmental sustainability.",
+                category: "environment",
+                impact: "Clean cooking for all",
+                beneficiaries: "20M+ families",
+                icon: "fire"
             },
             {
-                title: "School Uniform Distribution",
-                summary: "Educational support platform coordinating school uniform distribution to children from poor neighborhoods, ensuring dignified school attendance and removing economic barriers to education access.",
+                title: "Educational Dignity Initiative",
+                description: "School support platform coordinating distribution of quality school uniforms to children from poor neighborhoods, ensuring dignified school attendance, reducing stigma, removing economic barriers to education, and improving school enrollment and retention rates.",
                 category: "education",
-                impact: "Dignified school attendance"
+                impact: "Dignified education access",
+                beneficiaries: "50M+ students",
+                icon: "school"
             },
             {
-                title: "Senior Digital Connectivity",
-                summary: "Digital inclusion platform distributing basic smartphones with annual service subscriptions to elderly poor citizens, connecting them with family, healthcare services, and government benefit programs.",
+                title: "Senior Digital Inclusion Program",
+                description: "Technology accessibility platform distributing smartphones with pre-installed health apps, communication tools, and government service access to elderly citizens. Connects seniors with family, healthcare services, emergency support, and government benefit programs.",
                 category: "technology",
-                impact: "Digital inclusion for elderly"
+                impact: "Digital inclusion for elderly",
+                beneficiaries: "10M+ seniors",
+                icon: "mobile-alt"
             },
             {
-                title: "Youth Sports Equipment",
-                summary: "Athletic development platform providing sporting shoes and equipment to underprivileged village youth, promoting physical fitness, team building, and recreational opportunities for healthy development.",
+                title: "Youth Athletic Development Network",
+                description: "Sports empowerment platform providing sporting equipment, shoes, training gear, coaching support, and recreational facilities to underprivileged village youth. Promotes physical fitness, team building, leadership development, and healthy lifestyle alternatives.",
                 category: "social",
-                impact: "Youth athletic development"
+                impact: "Youth holistic development",
+                beneficiaries: "5M+ youth",
+                icon: "running"
             },
             {
-                title: "Sewing Skills Program",
-                summary: "Vocational training platform providing 6-month sewing machine training courses and donating machines to unemployed individuals, creating sustainable income opportunities through textile and tailoring work.",
+                title: "Sustainable Skills Training Program",
+                description: "Comprehensive vocational training platform providing 6-month sewing machine operation courses, equipment donation, and business development support to unemployed individuals. Creates sustainable income opportunities through textile work, tailoring services, and entrepreneurship.",
                 category: "employment",
-                impact: "Sustainable skill development"
+                impact: "Sustainable skill development",
+                beneficiaries: "2M+ trainees",
+                icon: "cut"
             },
             {
-                title: "Mosquito Net Distribution",
-                summary: "Public health platform distributing mosquito nets to poor neighborhoods, preventing vector-borne diseases like malaria and dengue while improving sleep quality and overall family health outcomes.",
+                title: "Disease Prevention Network",
+                description: "Public health platform distributing mosquito nets, conducting health education, and implementing vector control measures in poor neighborhoods. Prevents vector-borne diseases like malaria, dengue, and chikungunya while improving sleep quality and overall family health.",
                 category: "healthcare",
-                impact: "Disease prevention"
+                impact: "Disease prevention coverage",
+                beneficiaries: "100M+ people",
+                icon: "shield-alt"
             },
             {
-                title: "Free Eye Care Services",
-                summary: "Vision healthcare platform organizing free eye testing camps and spectacle distribution for poor communities, ensuring access to vision correction and early detection of eye diseases.",
+                title: "Vision Care Access Program",
+                description: "Comprehensive eye health platform organizing mobile eye testing camps, providing free spectacles, conducting cataract surgeries, and ensuring vision correction access for poor communities. Includes early detection of eye diseases and preventive care education.",
                 category: "healthcare",
-                impact: "Improved vision access"
+                impact: "Improved vision access",
+                beneficiaries: "50M+ people",
+                icon: "eye"
             },
             {
-                title: "Dental Healthcare Access",
-                summary: "Oral health platform providing free dental checkups, cleanings, and basic procedures to poor families, preventing serious dental diseases and improving overall health and quality of life.",
+                title: "Oral Health Equity Initiative",
+                description: "Dental healthcare platform providing free checkups, cleanings, preventive treatments, and basic dental procedures to economically disadvantaged families. Prevents serious dental diseases, improves overall health outcomes, and enhances quality of life.",
                 category: "healthcare",
-                impact: "Oral health for all"
+                impact: "Oral health for all",
+                beneficiaries: "200M+ people",
+                icon: "tooth"
             },
             {
-                title: "Wheelchair Distribution Program",
-                summary: "Mobility assistance platform providing free motorized and non-motorized wheelchairs to handicapped individuals from poor families, ensuring mobility independence and improved life quality.",
+                title: "Mobility Independence Program",
+                description: "Comprehensive disability support platform providing free motorized and manual wheelchairs, mobility aids, physical therapy, and accessibility modifications to handicapped individuals from poor families, ensuring independence and improved life quality.",
                 category: "healthcare",
-                impact: "Mobility independence"
+                impact: "Mobility independence",
+                beneficiaries: "5M+ individuals",
+                icon: "wheelchair"
             },
             {
-                title: "Hearing Aid Sponsorship",
-                summary: "Hearing healthcare platform connecting sponsors with disadvantaged individuals experiencing hearing loss, providing hearing aids, audiological testing, and ongoing support for communication accessibility.",
+                title: "Hearing Accessibility Network",
+                description: "Hearing healthcare platform connecting sponsors with individuals experiencing hearing loss, providing hearing aids, cochlear implants, audiological testing, speech therapy, and ongoing support for comprehensive communication accessibility and social integration.",
                 category: "healthcare",
-                impact: "Communication accessibility"
+                impact: "Communication accessibility",
+                beneficiaries: "10M+ individuals",
+                icon: "deaf"
             },
             {
-                title: "Rural Sports Equipment",
-                summary: "Youth development platform sponsoring sports equipment for rural poor children, including balls, bats, nets, and uniforms, promoting physical activity, teamwork, and healthy recreational alternatives.",
+                title: "Rural Youth Sports Development",
+                description: "Athletic empowerment platform sponsoring comprehensive sports equipment, coaching, facilities, and competitive opportunities for rural children. Includes balls, bats, nets, uniforms, training programs, and tournament participation for holistic youth development.",
                 category: "social",
-                impact: "Rural youth engagement"
+                impact: "Rural youth engagement",
+                beneficiaries: "10M+ rural youth",
+                icon: "futbol"
             },
             {
-                title: "Breadwinner Loss Support",
-                summary: "Family crisis platform providing comprehensive support to families who lose their primary income earner, including financial assistance, job placement services, and emotional counseling resources.",
+                title: "Family Crisis Support Network",
+                description: "Emergency assistance platform providing comprehensive support to families who lose their primary income earner, including immediate financial aid, job placement services, skills training, emotional counseling, and long-term rehabilitation for economic recovery.",
                 category: "social",
-                impact: "Family crisis support"
+                impact: "Family crisis recovery",
+                beneficiaries: "1M+ families",
+                icon: "hands-helping"
             },
             {
-                title: "Accident Recovery Aid",
-                summary: "Emergency assistance platform helping poor families overcome medical costs and income loss following accidents, providing financial support, rehabilitation resources, and recovery planning assistance.",
+                title: "Accident Recovery Assistance",
+                description: "Medical support platform helping poor families overcome financial burden and recovery challenges following accidents. Provides medical cost coverage, rehabilitation resources, income replacement, disability support, and comprehensive recovery planning assistance.",
                 category: "healthcare",
-                impact: "Accident recovery support"
+                impact: "Accident recovery support",
+                beneficiaries: "500K+ families",
+                icon: "band-aid"
             },
             {
-                title: "Autism Family Support",
-                summary: "Special needs platform providing comprehensive support to poor families affected by autism, including therapy resources, educational materials, respite care, and community support networks.",
+                title: "Autism Family Support Hub",
+                description: "Specialized platform providing comprehensive support to families affected by autism, including therapy resources, educational materials, respite care, behavior intervention, communication aids, and community support networks for holistic family empowerment.",
                 category: "healthcare",
-                impact: "Autism family support"
+                impact: "Autism family empowerment",
+                beneficiaries: "2M+ families",
+                icon: "puzzle-piece"
             },
             {
-                title: "Rural Education Scholarships",
-                summary: "Higher education platform providing scholarships for bright village children from poor families, covering tuition, hostel fees, books, and living expenses for university and professional courses.",
+                title: "Higher Education Scholarship Program",
+                description: "Educational advancement platform providing comprehensive scholarships for academically excellent students from economically disadvantaged backgrounds. Covers tuition, accommodation, books, living expenses, technology, and mentoring for university and professional courses.",
                 category: "education",
-                impact: "Higher education access"
+                impact: "Higher education access",
+                beneficiaries: "1M+ students",
+                icon: "university"
             },
             {
-                title: "Housing Repair Assistance",
-                summary: "Home improvement platform supporting repair and renovation of poor homes in backward communities, providing materials, labor coordination, and technical guidance for safe, dignified housing.",
+                title: "Housing Rehabilitation Initiative",
+                description: "Home improvement platform supporting repair, renovation, and reconstruction of substandard housing in economically disadvantaged communities. Provides materials, labor coordination, technical guidance, and safety upgrades for dignified, safe living conditions.",
                 category: "housing",
-                impact: "Safe housing conditions"
+                impact: "Safe housing conditions",
+                beneficiaries: "10M+ households",
+                icon: "home"
             },
             {
-                title: "Charity Network Hub",
-                summary: "Philanthropic coordination platform supporting various charitable organizations through leaderboard systems, promoting transparency, healthy competition, and increased donations across multiple help networks.",
+                title: "Philanthropic Coordination Network",
+                description: "Comprehensive platform supporting various charitable organizations through transparency tools, impact measurement, donation coordination, and healthy competition systems. Promotes efficient philanthropy, prevents overlap, and maximizes collective social impact.",
                 category: "social",
-                impact: "Coordinated philanthropy"
+                impact: "Coordinated philanthropy",
+                beneficiaries: "Global communities",
+                icon: "network-wired"
             },
             {
-                title: "Legal Aid Access",
-                summary: "Justice accessibility platform providing free legal support to disadvantaged individuals facing property disputes, labor rights issues, domestic violence, and other legal challenges requiring professional intervention.",
+                title: "Justice Accessibility Platform",
+                description: "Legal aid platform providing free legal support, representation, and advocacy to disadvantaged individuals facing property disputes, labor rights violations, domestic violence, discrimination, and other legal challenges requiring professional intervention.",
                 category: "social",
-                impact: "Justice accessibility"
+                impact: "Justice accessibility",
+                beneficiaries: "100M+ people",
+                icon: "balance-scale"
             },
             {
-                title: "Tree Planting Initiative",
-                summary: "Environmental platform supporting tree planting projects with resources and funding, promoting environmental restoration, climate change mitigation, and creating green employment opportunities in rural areas.",
+                title: "Environmental Restoration Initiative",
+                description: "Comprehensive tree planting and ecosystem restoration platform providing resources, funding, training, and coordination for large-scale environmental projects. Promotes climate change mitigation, biodiversity conservation, and creates green employment opportunities in rural areas.",
                 category: "environment",
-                impact: "Environmental restoration"
+                impact: "Environmental restoration",
+                beneficiaries: "Global environment",
+                icon: "tree"
             },
             {
-                title: "Plastic Bag Alternatives",
-                summary: "Environmental sustainability platform supporting poor communities in developing and distributing biodegradable alternatives to plastic bags, creating eco-friendly businesses and environmental protection.",
+                title: "Plastic-Free Community Program",
+                description: "Environmental sustainability platform supporting economically disadvantaged communities in developing, producing, and distributing biodegradable alternatives to plastic bags. Creates eco-friendly businesses, environmental protection, and sustainable income opportunities.",
                 category: "environment",
-                impact: "Plastic reduction"
+                impact: "Plastic pollution reduction",
+                beneficiaries: "50M+ communities",
+                icon: "leaf"
             },
             {
-                title: "Funeral Cost Support",
-                summary: "Dignity in death platform providing financial assistance to poor families facing unexpected funeral costs, ensuring respectful last rites regardless of economic circumstances during times of grief.",
+                title: "Dignified Funeral Support",
+                description: "End-of-life dignity platform providing financial assistance to poor families facing unexpected funeral costs, ensuring respectful last rites, cultural ceremony support, burial/cremation arrangements, and grief counseling regardless of economic circumstances.",
                 category: "social",
-                impact: "Dignified final rites"
+                impact: "Dignified final rites",
+                beneficiaries: "5M+ families",
+                icon: "praying-hands"
             },
             {
-                title: "Supplemental Medical Fund",
-                summary: "Healthcare financing platform providing additional medical funds to poor families beyond government aid, covering emergency treatments, medications, and specialized procedures not covered by public systems.",
+                title: "Supplemental Healthcare Fund",
+                description: "Healthcare financing platform providing additional medical funding to poor families beyond government aid, covering emergency treatments, specialized procedures, medications, medical equipment, and comprehensive care not covered by public health systems.",
                 category: "healthcare",
-                impact: "Comprehensive medical coverage"
+                impact: "Comprehensive medical coverage",
+                beneficiaries: "100M+ patients",
+                icon: "medical-kit"
             },
             {
-                title: "Water Filter Distribution",
-                summary: "Clean water platform distributing basic water filtration systems to poor neighborhoods, ensuring access to safe drinking water and preventing waterborne diseases in communities lacking water treatment infrastructure.",
+                title: "Clean Water Distribution Network",
+                description: "Water security platform distributing advanced water filtration systems, purification tablets, and water quality monitoring to poor neighborhoods. Ensures access to safe drinking water, prevents waterborne diseases, and supports community health infrastructure.",
                 category: "water",
-                impact: "Safe drinking water"
+                impact: "Safe drinking water access",
+                beneficiaries: "500M+ people",
+                icon: "tint"
             },
             {
-                title: "Hospital ICU Upgrades",
-                summary: "Healthcare infrastructure platform funding ICU improvements in old government hospitals, providing cots, electrical outlets, medical equipment, and waste management systems for better patient care.",
+                title: "Hospital Infrastructure Upgrade",
+                description: "Healthcare infrastructure platform funding comprehensive ICU improvements in government hospitals, providing modern medical equipment, patient cots, electrical systems, waste management, and advanced care facilities for better patient outcomes.",
                 category: "healthcare",
-                impact: "Better hospital care"
+                impact: "Enhanced hospital care",
+                beneficiaries: "50M+ patients",
+                icon: "hospital"
             },
             {
-                title: "Prosthetic Device Funding",
-                summary: "Medical device platform funding prosthetic limbs, artificial hands, and mobility devices for amputees from poor families, restoring functionality and independence for individuals with limb loss.",
+                title: "Prosthetic Rehabilitation Program",
+                description: "Medical device platform funding prosthetic limbs, artificial hands, mobility devices, and rehabilitation services for amputees from poor families. Restores functionality, independence, dignity, and social integration for individuals with limb loss.",
                 category: "healthcare",
-                impact: "Restored functionality"
+                impact: "Restored functionality",
+                beneficiaries: "1M+ individuals",
+                icon: "hand-paper"
             },
             {
-                title: "Homeless Winter Supplies",
-                summary: "Seasonal support platform distributing blankets, raincoats, and sleeping mats to homeless individuals during harsh weather conditions, providing basic protection and dignity for vulnerable populations.",
-                category: "social",
-                impact: "Weather protection"
-            },
-            {
-                title: "Community Bench Installation",
-                summary: "Public amenity platform installing benches in parks within poor neighborhoods, creating gathering spaces, rest areas for elderly, and community bonding locations for social interaction and recreation.",
-                category: "social",
-                impact: "Community gathering spaces"
-            },
-            {
-                title: "Solar Lighting for Villages",
-                summary: "Energy access platform providing solar light installation in villages without electricity, enabling children to study after dark, improving safety, and supporting economic activities during evening hours.",
-                category: "technology",
-                impact: "Evening productivity"
-            },
-            {
-                title: "Disaster Grocery Support",
-                summary: "Emergency relief platform supplying one-month essential grocery packages to poor families affected by natural disasters, ensuring immediate food security during crisis recovery periods.",
+                title: "Homeless Weather Protection",
+                description: "Emergency shelter platform distributing weather protection supplies including insulated blankets, waterproof clothing, sleeping mats, and temporary shelter structures to homeless individuals during extreme weather conditions, ensuring survival and basic dignity.",
                 category: "emergency",
-                impact: "Disaster recovery support"
+                impact: "Weather emergency protection",
+                beneficiaries: "10M+ homeless individuals",
+                icon: "home"
             },
             {
-                title: "Orphan Birthday Celebrations",
-                summary: "Childhood joy platform organizing birthday celebrations for orphaned children, providing cakes, gifts, and party supplies from local bakeries and sponsors, with strict fraud prevention measures.",
+                title: "Community Space Development",
+                description: "Public amenity platform installing benches, gazebos, and community gathering spaces in parks within poor neighborhoods. Creates social interaction hubs, rest areas for elderly, recreational spaces, and strengthens community bonds and neighborhood cohesion.",
                 category: "social",
-                impact: "Childhood celebration"
+                impact: "Community gathering spaces",
+                beneficiaries: "100M+ residents",
+                icon: "users"
             },
             {
-                title: "Baby Diaper Distribution",
-                summary: "Infant care platform distributing diapers to economically disadvantaged parents with newborns and toddlers, ensuring infant hygiene, comfort, and preventing health issues from inadequate sanitation.",
+                title: "Solar Energy Access Initiative",
+                description: "Renewable energy platform providing comprehensive solar lighting systems to villages without electricity access. Enables children to study after dark, improves safety and security, supports economic activities, and promotes sustainable energy independence.",
+                category: "technology",
+                impact: "Energy access and productivity",
+                beneficiaries: "50M+ rural residents",
+                icon: "solar-panel"
+            },
+            {
+                title: "Disaster Recovery Food Support",
+                description: "Emergency relief platform rapidly supplying comprehensive one-month essential grocery packages to families affected by natural disasters. Ensures immediate food security, nutritional support, and stability during crisis recovery periods with efficient distribution systems.",
+                category: "emergency",
+                impact: "Disaster recovery nutrition",
+                beneficiaries: "20M+ disaster victims",
+                icon: "box"
+            },
+            {
+                title: "Orphan Childhood Joy Initiative",
+                description: "Child welfare platform organizing meaningful birthday celebrations for orphaned children, providing cakes, gifts, party supplies, social activities, and emotional support from volunteers and sponsors, with comprehensive fraud prevention and verification measures.",
+                category: "social",
+                impact: "Childhood celebration and joy",
+                beneficiaries: "5M+ orphan children",
+                icon: "birthday-cake"
+            },
+            {
+                title: "Infant Care Support Program",
+                description: "Child health platform distributing quality diapers, baby care products, hygiene supplies, and parenting resources to economically disadvantaged parents with newborns and toddlers, ensuring infant health, comfort, and preventing sanitation-related health issues.",
                 category: "healthcare",
-                impact: "Infant health and comfort"
+                impact: "Infant health and comfort",
+                beneficiaries: "50M+ infants",
+                icon: "baby"
             },
             {
-                title: "Mobile Food Delivery",
-                summary: "Nutrition access platform setting up mobile food delivery services for homeless and underprivileged individuals in areas lacking government food programs, ensuring regular nutritious meal access.",
+                title: "Mobile Nutrition Distribution",
+                description: "Food security platform establishing comprehensive mobile food delivery services for homeless and underprivileged individuals in areas lacking government food programs. Ensures regular access to nutritious, culturally appropriate meals and dietary support.",
                 category: "food",
-                impact: "Regular nutrition access"
+                impact: "Regular nutrition access",
+                beneficiaries: "25M+ people",
+                icon: "truck"
             },
             {
-                title: "Summer Cooling Support",
-                summary: "Climate relief platform providing summer coolers and fans to poor households with disabled or elderly members, ensuring comfort and preventing heat-related health issues during extreme weather.",
+                title: "Climate Relief Support",
+                description: "Weather assistance platform providing cooling equipment, fans, air circulation systems, and heat relief supplies to poor households with disabled or elderly members, ensuring comfort, health protection, and preventing heat-related medical emergencies.",
                 category: "social",
-                impact: "Climate comfort"
+                impact: "Climate comfort and health",
+                beneficiaries: "20M+ vulnerable individuals",
+                icon: "thermometer-half"
             },
             {
-                title: "Agricultural Expert Sponsorship",
-                summary: "Knowledge transfer platform sponsoring agricultural experts to educate poor farmers on new technologies, modern farming techniques, crop management, and sustainable agricultural practices for improved yields.",
+                title: "Agricultural Knowledge Transfer",
+                description: "Farm education platform sponsoring agricultural experts, extension workers, and technology specialists to provide comprehensive training to poor farmers on modern techniques, sustainable practices, crop management, and innovative agricultural technologies for improved yields.",
                 category: "agriculture",
-                impact: "Modern farming knowledge"
+                impact: "Modern farming knowledge access",
+                beneficiaries: "10M+ farmers",
+                icon: "chalkboard-teacher"
             },
             {
-                title: "Mobile Medical Services",
-                summary: "Healthcare access platform sponsoring doctor and nurse visits to poor villages, bringing medical expertise, preventive care, health screenings, and treatment services to underserved rural communities.",
+                title: "Rural Mobile Healthcare",
+                description: "Healthcare access platform sponsoring regular doctor and nurse visits to underserved villages, providing medical expertise, preventive care, health screenings, treatment services, medication distribution, and health education for comprehensive rural healthcare.",
                 category: "healthcare",
-                impact: "Rural medical access"
+                impact: "Rural medical access",
+                beneficiaries: "100M+ rural residents",
+                icon: "user-md"
             },
             {
-                title: "Community Recreation Trips",
-                summary: "Social wellness platform sponsoring bus trips for groups from poor neighborhoods to recreational destinations, providing mental health benefits, community bonding, and exposure to new environments.",
+                title: "Community Wellness Recreation",
+                description: "Social wellness platform sponsoring group recreational trips and activities for residents of poor neighborhoods, providing mental health benefits, community bonding opportunities, stress relief, and exposure to new environments and experiences.",
                 category: "social",
-                impact: "Community wellness"
+                impact: "Community mental wellness",
+                beneficiaries: "50M+ community members",
+                icon: "hiking"
             },
             {
-                title: "Neighborhood Cleanup Jobs",
-                summary: "Employment platform paying unemployed youth to clean poor neighborhoods, creating immediate income opportunities while improving community hygiene, pride, and environmental conditions.",
+                title: "Green Employment Initiative",
+                description: "Environmental employment platform providing paid opportunities for unemployed youth to clean and beautify poor neighborhoods, creating immediate income while improving community hygiene, environmental conditions, and neighborhood pride.",
                 category: "employment",
-                impact: "Clean communities + jobs"
+                impact: "Clean communities + jobs",
+                beneficiaries: "5M+ youth",
+                icon: "broom"
             },
             {
-                title: "Water Infrastructure Support",
-                summary: "Water security platform providing water tanks and hand pumps for underprivileged communities, ensuring reliable water access, reducing water collection burden, and improving community health outcomes.",
+                title: "Water Infrastructure Security",
+                description: "Water access platform providing community water tanks, hand pumps, distribution systems, and maintenance training for underprivileged communities. Ensures reliable water access, reduces collection burden, and improves community health and economic productivity.",
                 category: "water",
-                impact: "Reliable water access"
+                impact: "Reliable water access",
+                beneficiaries: "200M+ people",
+                icon: "faucet"
             },
             {
-                title: "Urban Job Migration Support",
-                summary: "Employment mobility platform supporting unemployed village youth with 3-month stipends to search for jobs in cities, including accommodation assistance and job placement services.",
+                title: "Urban Migration Support",
+                description: "Employment mobility platform supporting unemployed rural youth with comprehensive 3-month stipends, accommodation assistance, job placement services, skills training, and urban adaptation support to successfully transition to city employment opportunities.",
                 category: "employment",
-                impact: "Urban job opportunities"
+                impact: "Urban employment opportunities",
+                beneficiaries: "2M+ rural youth",
+                icon: "city"
             },
             {
-                title: "Street Lighting Projects",
-                summary: "Safety infrastructure platform funding solar and electric street lamps in poorly lit neighborhoods, improving safety, security, enabling evening activities, and deterring crime in vulnerable communities.",
+                title: "Community Safety Lighting",
+                description: "Safety infrastructure platform funding comprehensive solar and electric street lighting systems in poorly lit neighborhoods, improving community safety, security, enabling evening economic activities, and deterring crime in vulnerable communities.",
                 category: "social",
-                impact: "Community safety"
+                impact: "Enhanced community safety",
+                beneficiaries: "100M+ residents",
+                icon: "lightbulb"
             },
             {
-                title: "Community Library Development",
-                summary: "Education infrastructure platform building and supporting community libraries with technology resources and book collections for poor neighborhoods, promoting literacy and lifelong learning opportunities.",
+                title: "Community Knowledge Centers",
+                description: "Educational infrastructure platform building and supporting community libraries with technology resources, internet access, digital literacy programs, and comprehensive book collections for poor neighborhoods, promoting lifelong learning and knowledge access.",
                 category: "education",
-                impact: "Community knowledge access"
+                impact: "Community knowledge access",
+                beneficiaries: "50M+ learners",
+                icon: "book-open"
             },
             {
-                title: "Crop Disaster Relief",
-                summary: "Agricultural emergency platform providing quick financial aid to farmers after crop damage from natural disasters, preventing farmer debt, suicide, and enabling replanting for agricultural recovery.",
+                title: "Agricultural Crisis Prevention",
+                description: "Farm emergency platform providing rapid financial aid, crop insurance, alternative livelihood support, and counseling services to farmers affected by natural disasters, preventing debt cycles, farmer suicides, and enabling agricultural recovery.",
                 category: "agriculture",
-                impact: "Farmer crisis prevention"
+                impact: "Farmer crisis prevention",
+                beneficiaries: "10M+ farmers",
+                icon: "leaf"
             },
             {
-                title: "Slum Relocation Assistance",
-                summary: "Housing improvement platform facilitating relocation of families from slums and dump yards to better housing through government and private partnerships, ensuring dignified living conditions.",
+                title: "Housing Upgrade Initiative",
+                description: "Housing transformation platform facilitating systematic relocation of families from slums and unsafe areas to improved housing through government and private partnerships, ensuring dignified living conditions, infrastructure access, and community development.",
                 category: "housing",
-                impact: "Dignified housing"
+                impact: "Dignified housing transitions",
+                beneficiaries: "50M+ families",
+                icon: "building"
             },
             {
-                title: "Disabled Support Grants",
-                summary: "Disability assistance platform randomly distributing gift cheques to poor disabled individuals, providing unexpected financial support for medical needs, assistive devices, and improved quality of life.",
+                title: "Disability Support Network",
+                description: "Disability assistance platform providing random financial support, medical aid, assistive devices, and comprehensive services to poor disabled individuals, offering unexpected assistance for medical needs, mobility aids, and improved quality of life.",
                 category: "social",
-                impact: "Disability support"
+                impact: "Comprehensive disability support",
+                beneficiaries: "20M+ disabled individuals",
+                icon: "wheelchair"
             },
             {
-                title: "Dropout Recovery Program",
-                summary: "Education retention platform encouraging school dropouts to return through scholarships, free books, uniforms, and counseling services, addressing root causes of educational abandonment.",
+                title: "Education Recovery Program",
+                description: "Student retention platform encouraging school dropouts to return through comprehensive scholarships, free educational materials, uniforms, nutritional support, counseling services, and addressing root causes of educational abandonment.",
                 category: "education",
-                impact: "Education retention"
+                impact: "Education retention and recovery",
+                beneficiaries: "10M+ students",
+                icon: "undo"
             },
             {
-                title: "School Infrastructure Upgrade",
-                summary: "Educational infrastructure platform upgrading poor village schools with better buildings, classrooms, laboratories, libraries, and sanitation facilities to create conducive learning environments.",
+                title: "Educational Infrastructure Enhancement",
+                description: "School development platform upgrading rural and poor schools with modern buildings, equipped classrooms, science laboratories, libraries, computer labs, sanitation facilities, and comprehensive infrastructure to create optimal learning environments.",
                 category: "education",
-                impact: "Better learning environment"
+                impact: "Enhanced learning environments",
+                beneficiaries: "100M+ students",
+                icon: "school"
             },
             {
-                title: "Educational Tours for Students",
-                summary: "Learning enhancement platform sponsoring picnics and science tours for village school children, providing experiential learning opportunities and exposure to scientific institutions and cultural sites.",
+                title: "Experiential Learning Tours",
+                description: "Educational enrichment platform sponsoring educational picnics, science museum visits, cultural tours, and field trips for village school children, providing hands-on learning experiences, exposure to scientific institutions, and cultural broadening opportunities.",
                 category: "education",
-                impact: "Experiential learning"
+                impact: "Experiential learning access",
+                beneficiaries: "25M+ students",
+                icon: "bus"
             },
             {
-                title: "Inter-School Sports Events",
-                summary: "Youth engagement platform sponsoring competitive sports events between schools in poor neighborhoods, promoting healthy competition, teamwork, and providing recognition opportunities for talented youth.",
+                title: "Youth Sports Competition Network",
+                description: "Athletic development platform sponsoring competitive sports events, tournaments, and athletic competitions between schools in poor neighborhoods, promoting healthy competition, teamwork, talent recognition, and physical fitness among disadvantaged youth.",
                 category: "social",
-                impact: "Youth talent recognition"
+                impact: "Youth talent development",
+                beneficiaries: "50M+ young athletes",
+                icon: "trophy"
             },
             {
-                title: "Farmer Suicide Prevention",
-                summary: "Mental health platform preventing farmer suicides through counseling services, emergency financial aid, government scheme connections, and comprehensive support for agricultural and personal crises.",
+                title: "Farmer Mental Health Initiative",
+                description: "Agricultural welfare platform preventing farmer suicides through comprehensive mental health counseling, crisis intervention, emergency financial aid, government scheme connections, debt relief, and holistic support for agricultural and personal crises.",
                 category: "healthcare",
-                impact: "Saves farmer lives"
+                impact: "Farmer life preservation",
+                beneficiaries: "25M+ farmers",
+                icon: "heart"
             },
             {
-                title: "Community Job Fairs",
-                summary: "Employment platform organizing job fairs in poor neighborhoods, connecting local employers with job seekers, providing career guidance, skill assessment, and immediate employment opportunities.",
+                title: "Local Employment Matching",
+                description: "Job placement platform organizing comprehensive job fairs, career guidance, skills assessment, employer networking, and immediate employment opportunities specifically tailored for residents of economically disadvantaged neighborhoods and rural areas.",
                 category: "employment",
-                impact: "Local employment matching"
+                impact: "Local employment connections",
+                beneficiaries: "10M+ job seekers",
+                icon: "handshake"
             },
             {
-                title: "Community Ambulance Service",
-                summary: "Emergency medical platform procuring and funding ambulances with trained drivers for poor neighborhoods, ensuring rapid medical emergency response and transport to healthcare facilities.",
+                title: "Emergency Medical Response",
+                description: "Healthcare emergency platform procuring, maintaining, and operating ambulances with trained drivers and medical equipment for poor neighborhoods, ensuring rapid emergency medical response, transport services, and critical care access.",
                 category: "healthcare",
-                impact: "Emergency medical access"
+                impact: "Emergency medical access",
+                beneficiaries: "200M+ residents",
+                icon: "ambulance"
             },
             {
-                title: "Girls' Education Empowerment",
-                summary: "Gender equality platform empowering girls in poor neighborhoods through education support, scholarships, mentoring, safety measures, and advocacy for equal educational opportunities and social progress.",
+                title: "Girls Education Empowerment",
+                description: "Gender equality platform specifically empowering girls in poor neighborhoods through comprehensive education support, scholarships, mentoring programs, safety measures, leadership training, and advocacy for equal educational opportunities and social advancement.",
                 category: "education",
-                impact: "Gender equality in education"
+                impact: "Gender equality in education",
+                beneficiaries: "100M+ girls",
+                icon: "female"
             },
             {
-                title: "Waste Management Systems",
-                summary: "Environmental platform installing dry and wet waste separation systems with regular cleanup services in poor neighborhoods, promoting hygiene, environmental health, and community cleanliness.",
+                title: "Community Environmental Management",
+                description: "Environmental health platform installing comprehensive waste separation systems, recycling facilities, regular cleanup services, and environmental education in poor neighborhoods, promoting community hygiene, environmental health, and sustainable practices.",
                 category: "environment",
-                impact: "Clean neighborhoods"
+                impact: "Clean neighborhood environments",
+                beneficiaries: "500M+ residents",
+                icon: "trash-alt"
             },
             {
-                title: "Handloom Weaver Support",
-                summary: "Traditional craft platform supporting manual handloom weavers with raw materials, tools, and market access connections, preserving traditional skills while creating sustainable income opportunities.",
+                title: "Traditional Craft Preservation",
+                description: "Cultural heritage platform supporting manual handloom weavers with raw materials, modern tools, design innovation, market access, fair trade connections, and sustainable income opportunities while preserving traditional textile crafts and skills.",
                 category: "employment",
-                impact: "Traditional craft preservation"
+                impact: "Traditional craft preservation",
+                beneficiaries: "1M+ artisans",
+                icon: "palette"
             },
             {
-                title: "Heart Surgery Funding",
-                summary: "Cardiac care platform connecting donors with hospitals to fund heart operations for poor patients, ensuring access to life-saving cardiac procedures regardless of economic circumstances.",
+                title: "Cardiac Surgery Access",
+                description: "Life-saving medical platform connecting donors with hospitals to fund comprehensive heart operations, cardiac procedures, post-surgery care, and rehabilitation for poor patients, ensuring access to critical cardiac interventions regardless of economic status.",
                 category: "healthcare",
-                impact: "Life-saving cardiac care"
+                impact: "Life-saving cardiac care",
+                beneficiaries: "1M+ cardiac patients",
+                icon: "heartbeat"
             },
             {
-                title: "Kidney Transplant Support",
-                summary: "Renal healthcare platform connecting donors with poor patients needing kidney transplants, covering surgery costs, medications, and post-transplant care for life-saving renal procedures.",
+                title: "Kidney Disease Support",
+                description: "Renal healthcare platform connecting donors with poor patients requiring kidney transplants, dialysis, and renal care, covering surgery costs, medications, post-transplant care, and long-term medical support for life-saving renal procedures.",
                 category: "healthcare",
-                impact: "Life-saving renal care"
+                impact: "Life-saving renal care",
+                beneficiaries: "500K+ renal patients",
+                icon: "hospital"
             },
             {
-                title: "Digital Device Distribution",
-                summary: "Technology access platform distributing refurbished laptops and tablets to educated unemployed youth in villages, enabling digital job opportunities, online learning, and skill development.",
+                title: "Digital Skills Empowerment",
+                description: "Technology access platform distributing refurbished laptops, tablets, and digital devices to educated unemployed youth in villages, enabling access to digital job opportunities, online learning platforms, and technology-based skill development.",
                 category: "technology",
-                impact: "Digital skill development"
+                impact: "Digital skill development",
+                beneficiaries: "20M+ rural youth",
+                icon: "laptop"
             },
             {
-                title: "Child Labor Rehabilitation",
-                summary: "Child protection platform uplifting child laborers from poverty through rescue operations, rehabilitation services, education enrollment, family support, and long-term monitoring for sustainable change.",
+                title: "Child Protection and Rehabilitation",
+                description: "Child welfare platform comprehensively uplifting child laborers through rescue operations, rehabilitation services, educational enrollment, family economic support, skill training, and long-term monitoring for sustainable protection and development.",
                 category: "social",
-                impact: "Child protection"
+                impact: "Child protection and development",
+                beneficiaries: "50M+ children",
+                icon: "shield-alt"
             },
             {
-                title: "Nation-Building Employment",
-                summary: "Civic engagement platform supporting youth from poor neighborhoods with nation-building jobs in infrastructure, environment, education, and community development sectors for meaningful employment.",
+                title: "Civic Employment Network",
+                description: "National development platform supporting youth from poor neighborhoods with meaningful employment in infrastructure development, environmental conservation, education support, and community development sectors for contributory national service.",
                 category: "employment",
-                impact: "Meaningful civic employment"
+                impact: "Meaningful civic employment",
+                beneficiaries: "10M+ youth",
+                icon: "flag"
             },
             {
-                title: "Student Bicycle Program",
-                summary: "Transportation platform sponsoring bicycles for poor school-going children in rural areas, reducing dropout rates caused by long-distance travel and ensuring consistent school attendance.",
+                title: "Educational Transportation Support",
+                description: "School access platform sponsoring bicycles, transportation vouchers, and safe transit solutions for poor school-going children in rural areas, significantly reducing dropout rates caused by distance barriers and ensuring consistent educational attendance.",
                 category: "education",
-                impact: "Reduced school dropouts"
+                impact: "Reduced education dropouts",
+                beneficiaries: "25M+ students",
+                icon: "bicycle"
             },
             {
-                title: "Artisan Market Connect",
-                summary: "Economic empowerment platform connecting rural artisans specializing in pottery, bamboo crafts, and handmade items with city and global buyers, creating sustainable income for traditional craftspeople.",
+                title: "Global Artisan Marketplace",
+                description: "Economic empowerment platform connecting rural artisans specializing in pottery, bamboo crafts, textiles, and handmade products with city and international buyers, creating sustainable income streams and preserving traditional craftsmanship.",
                 category: "employment",
-                impact: "Global market access"
+                impact: "Global market access",
+                beneficiaries: "5M+ artisans",
+                icon: "globe"
             },
             {
-                title: "Cancer Treatment Support",
-                summary: "Oncology platform supporting poor patients needing cancer treatment by funding chemotherapy, radiation therapy, medications, and palliative care through donor contributions and medical partnerships.",
+                title: "Comprehensive Cancer Care",
+                description: "Oncology support platform providing complete cancer treatment funding including chemotherapy, radiation therapy, surgery, medications, palliative care, and family support services for poor patients through donor contributions and medical partnerships.",
                 category: "healthcare",
-                impact: "Cancer care access"
+                impact: "Cancer care accessibility",
+                beneficiaries: "2M+ cancer patients",
+                icon: "ribbon"
             },
             {
-                title: "Clean Cooking Solutions",
-                summary: "Health platform connecting poor households with energy-efficient cooking stoves, reducing firewood consumption, indoor air pollution, and respiratory health problems while promoting environmental sustainability.",
+                title: "Clean Cooking Revolution",
+                description: "Environmental health platform connecting poor households with energy-efficient cooking stoves, solar cookers, and clean fuel solutions, dramatically reducing firewood consumption, indoor air pollution, and respiratory health problems.",
                 category: "environment",
-                impact: "Clean cooking health"
+                impact: "Clean cooking health",
+                beneficiaries: "500M+ households",
+                icon: "fire"
             },
             {
-                title: "Weather Emergency Shelters",
-                summary: "Crisis platform providing safe shelters for homeless individuals during extreme weather events including heat waves, floods, and winter cold, ensuring survival and dignity during climate emergencies.",
+                title: "Climate Emergency Shelters",
+                description: "Crisis response platform providing comprehensive emergency shelters for homeless individuals during extreme weather events including heat waves, floods, storms, and winter cold, ensuring survival, safety, and basic human dignity.",
                 category: "emergency",
-                impact: "Weather emergency protection"
+                impact: "Climate emergency protection",
+                beneficiaries: "100M+ vulnerable people",
+                icon: "home"
             },
             {
-                title: "Widow Support Services",
-                summary: "Women's welfare platform supporting widows in poor neighborhoods with monthly pensions, vocational training, emotional support groups, and community integration for comprehensive rehabilitation.",
+                title: "Widow Empowerment Program",
+                description: "Women's welfare platform providing comprehensive support to widows in poor neighborhoods including monthly pensions, vocational training, business development, emotional support groups, healthcare, and community integration for complete rehabilitation.",
                 category: "social",
-                impact: "Widow rehabilitation"
+                impact: "Widow empowerment and rehabilitation",
+                beneficiaries: "50M+ widows",
+                icon: "female"
             },
             {
-                title: "Digital Learning Kits",
-                summary: "Education technology platform providing poor school children with digital learning kits including educational tablets preloaded with e-learning applications for enhanced educational outcomes.",
+                title: "Digital Learning Enhancement",
+                description: "Education technology platform providing poor school children with comprehensive digital learning kits including educational tablets, e-learning applications, internet access, and digital literacy training for enhanced educational outcomes and future readiness.",
                 category: "technology",
-                impact: "Enhanced digital learning"
+                impact: "Enhanced digital learning",
+                beneficiaries: "200M+ students",
+                icon: "tablet-alt"
             },
             {
-                title: "Multi-Skill Training Center",
-                summary: "Vocational platform providing comprehensive skill training in plumbing, electrical work, tailoring, mobile repair, and AI-based website creation for unemployed youth in poor neighborhoods.",
+                title: "Multi-Skill Development Center",
+                description: "Comprehensive vocational platform providing diverse skill training including plumbing, electrical work, tailoring, mobile repair, computer skills, and AI-based technologies for unemployed youth in economically disadvantaged areas.",
                 category: "employment",
-                impact: "Multiple skill development"
+                impact: "Multiple skill development",
+                beneficiaries: "25M+ trainees",
+                icon: "tools"
             },
             {
-                title: "Community Fitness Centers",
-                summary: "Health platform installing open-air gyms in poor neighborhoods through donor sponsorship, promoting physical fitness, community health, and recreational opportunities for all age groups.",
+                title: "Community Fitness Revolution",
+                description: "Public health platform installing comprehensive open-air gyms, exercise equipment, fitness programs, and wellness activities in poor neighborhoods through donor sponsorship, promoting community health, fitness, and recreational opportunities.",
                 category: "healthcare",
-                impact: "Community fitness"
+                impact: "Community fitness and health",
+                beneficiaries: "500M+ residents",
+                icon: "dumbbell"
             },
             {
-                title: "Poverty Tech Development Fund",
-                summary: "Innovation platform funding individuals working on technical design and implementation of applications specifically focused on poverty alleviation and community development initiatives.",
+                title: "Poverty Innovation Fund",
+                description: "Technology development platform funding individuals and teams working on innovative technical design and implementation of applications specifically focused on poverty alleviation, community development, and social impact solutions.",
                 category: "technology",
-                impact: "Innovation for poverty"
+                impact: "Innovation for poverty alleviation",
+                beneficiaries: "Global poor populations",
+                icon: "lightbulb"
             },
             {
-                title: "Rural Digital Library Network",
-                summary: "Knowledge access platform mobilizing unused books, old laptops, and tablets from urban areas to establish community libraries in poor villages, bridging the digital and educational divide.",
+                title: "Rural Digital Knowledge Network",
+                description: "Comprehensive educational platform mobilizing unused books, refurbished laptops, tablets, and digital resources from urban areas to establish well-equipped community libraries and learning centers in poor villages.",
                 category: "education",
-                impact: "Rural knowledge access"
+                impact: "Rural knowledge access",
+                beneficiaries: "100M+ rural learners",
+                icon: "wifi"
             },
             {
-                title: "Farmer Widow Comprehensive Support",
-                summary: "Specialized platform tracking widows of farmers who died by suicide, connecting them with donors for monthly sustenance, children's education funding, and emotional support services.",
+                title: "Farmer Widow Support System",
+                description: "Specialized welfare platform systematically tracking and supporting widows of farmers who died by suicide, connecting them with donors for monthly sustenance, children's education funding, emotional counseling, and comprehensive rehabilitation services.",
                 category: "social",
-                impact: "Farmer widow care"
+                impact: "Farmer widow comprehensive care",
+                beneficiaries: "5M+ farmer widows",
+                icon: "heart"
             },
             {
                 title: "Medicine Redistribution Network",
-                summary: "Healthcare resource platform collecting unused but non-expired medicines from households and pharmacies, safely redistributing them to poor patients through verified NGOs and healthcare providers.",
+                description: "Healthcare resource platform systematically collecting unused but non-expired medicines from households, pharmacies, and hospitals, safely redistributing them to poor patients through verified NGOs and healthcare providers with quality assurance.",
                 category: "healthcare",
-                impact: "Medicine access"
+                impact: "Medicine accessibility",
+                beneficiaries: "1B+ patients",
+                icon: "pills"
             },
             {
                 title: "Inclusive Employment Platform",
-                summary: "Disability employment platform listing local job opportunities specifically designed for physically challenged and visually impaired individuals, with donor-sponsored assistive devices and workplace accommodations.",
+                description: "Comprehensive disability employment platform listing specialized job opportunities designed for physically challenged and visually impaired individuals, providing donor-sponsored assistive devices, workplace accommodations, and inclusive hiring support.",
                 category: "employment",
-                impact: "Inclusive employment"
+                impact: "Inclusive employment opportunities",
+                beneficiaries: "100M+ disabled individuals",
+                icon: "universal-access"
             },
             {
-                title: "Slum Sanitation Tracker",
-                summary: "Urban health platform identifying slums lacking toilets, drainage, and clean water systems, enabling donors and NGOs to fund immediate sanitation solutions for improved community health.",
+                title: "Urban Sanitation Transformation",
+                description: "Urban health platform systematically identifying slums lacking toilets, drainage, and clean water systems, enabling donors, NGOs, and government agencies to fund immediate comprehensive sanitation solutions for community health improvement.",
                 category: "water",
-                impact: "Urban sanitation"
+                impact: "Urban sanitation access",
+                beneficiaries: "500M+ slum residents",
+                icon: "shower"
             },
             {
-                title: "Street Children Education",
-                summary: "Child welfare platform connecting children found begging on streets with volunteer teachers and donors who sponsor schooling, food, uniforms, and comprehensive rehabilitation services.",
+                title: "Street Children Education Initiative",
+                description: "Child welfare platform connecting children found in street situations with volunteer teachers, donors, and comprehensive rehabilitation services including schooling, nutrition, healthcare, uniforms, and family reunification or alternative care.",
                 category: "education",
-                impact: "Street children education"
+                impact: "Street children education",
+                beneficiaries: "20M+ street children",
+                icon: "child"
             },
             {
                 title: "Rural Emergency Transport",
-                summary: "Emergency access platform tracking villages where ambulances rarely reach, enabling donors to fund small vehicles and bikes equipped for patient transport to nearest hospitals.",
+                description: "Emergency healthcare platform tracking remote villages where ambulances rarely reach, enabling donors to fund specially equipped small vehicles, motorbikes, and community-based transport systems for patient transport to medical facilities.",
                 category: "healthcare",
-                impact: "Rural emergency access"
+                impact: "Rural emergency medical access",
+                beneficiaries: "200M+ rural residents",
+                icon: "motorcycle"
             },
             {
-                title: "Elderly Pension Booster",
-                summary: "Senior care platform allowing wealthy donors to 'adopt' elderly poor individuals living without family support, supplementing government pensions with additional monthly contributions.",
+                title: "Elderly Financial Security",
+                description: "Senior care platform enabling wealthy donors to 'adopt' elderly poor individuals living without family support, supplementing inadequate government pensions with additional monthly contributions and comprehensive elderly care services.",
                 category: "social",
-                impact: "Elderly financial security"
+                impact: "Elderly financial security",
+                beneficiaries: "100M+ elderly people",
+                icon: "user-friends"
             },
             {
-                title: "Micro Insurance for Poor",
-                summary: "Financial protection platform providing simple insurance schemes covering health, accident, and crop damage where donors cover premiums for ultra-poor families unable to afford insurance.",
+                title: "Micro Insurance Protection",
+                description: "Financial protection platform providing simple, affordable insurance schemes covering health, accident, crop damage, and livelihood protection where donors cover premiums for ultra-poor families unable to afford basic insurance coverage.",
                 category: "finance",
-                impact: "Financial protection"
+                impact: "Financial protection for all",
+                beneficiaries: "1B+ poor families",
+                icon: "shield-alt"
             },
             {
-                title: "Skill-to-Survival Training",
-                summary: "Employment platform matching poor unemployed youth with free skill workshops in carpentry, tailoring, mobile repair, and coding, funded by donors for immediate employability.",
+                title: "Skills-to-Employment Bridge",
+                description: "Employment acceleration platform matching poor unemployed youth with free comprehensive skill workshops in carpentry, tailoring, mobile repair, coding, and emerging technologies, funded by donors for immediate employability and income generation.",
                 category: "employment",
-                impact: "Immediate employability"
+                impact: "Immediate employability",
+                beneficiaries: "50M+ unemployed youth",
+                icon: "bridge"
             },
             {
-                title: "Drought Emergency Water",
-                summary: "Crisis platform managing real-time requests for drinking water in drought-affected villages, coordinating NGO and donor-funded water tanker dispatch for emergency water supply.",
+                title: "Drought Crisis Management",
+                description: "Water emergency platform managing real-time requests for drinking water in drought-affected villages, coordinating rapid deployment of NGO and donor-funded water tankers, and implementing emergency water supply systems for crisis management.",
                 category: "water",
-                impact: "Drought crisis management"
-            },
-            {
-                title: "Migrant Worker Protection",
-                summary: "Labor rights platform helping stranded or exploited migrant workers connect with help desks for shelter, wage recovery, travel assistance, food support, and legal protection services.",
-                category: "employment",
-                impact: "Migrant worker protection"
-            },
-            {
-                title: "Solar Study Lamps",
-                summary: "Education support platform distributing low-cost solar lamps to children in villages without electricity, enabling night-time studying and improving educational outcomes in off-grid communities.",
-                category: "education",
-                impact: "Night study access"
-            },
-            {
-                title: "Burn Victim Rehabilitation",
-                summary: "Medical care platform tracking poor patients who suffer burns, connecting them with donors to fund surgeries, skin grafts, rehabilitation therapy, and long-term recovery support.",
-                category: "healthcare",
-                impact: "Burn recovery support"
-            },
-            {
-                title: "Flood Relief Coordination",
-                summary: "Disaster platform mapping poor families affected by seasonal floods, enabling donors to provide boats, temporary shelters, emergency kits, and coordinated flood response services.",
-                category: "emergency",
-                impact: "Flood emergency response"
-            },
-            {
-                title: "Tribal Community Support",
-                summary: "Cultural preservation platform connecting tribal communities with donors for education, healthcare, clothing, and food support while ensuring cultural sensitivity and preventing exploitation.",
-                category: "social",
-                impact: "Tribal community support"
-            },
-            {
-                title: "Affordable Prosthetics Program",
-                summary: "Medical device platform connecting poor amputees with donors who sponsor low-cost prosthetic limbs, artificial hands, wheelchairs, and rehabilitation services for restored mobility.",
-                category: "healthcare",
-                impact: "Restored mobility"
-            },
-            {
-                title: "Widow Housing Initiative",
-                summary: "Housing platform building small donor-funded homes specifically for abandoned or homeless widows, providing safe, dignified shelter and community support for vulnerable women.",
-                category: "housing",
-                impact: "Widow housing security"
-            },
-            {
-                title: "Vendor Childcare Centers",
-                summary: "Family support platform creating safe donor-supported daycare centers where street vendors and daily wage laborers can leave their children while working, ensuring child safety and parental peace of mind.",
-                category: "social",
-                impact: "Working parent support"
-            },
-            {
-                title: "Emergency Funeral Support",
-                summary: "Crisis assistance platform helping poor families who cannot afford funeral expenses by connecting them with donors who cover cremation, burial costs, and related funeral arrangements.",
-                category: "social",
-                impact: "Dignified death rites"
+                impact: "Drought crisis management",
+                beneficiaries: "100M+ drought-affected people",
+                icon: "sun"
             }
         ];
 
-        let filteredData = appData;
-        let recordCounter = 1;
+        let filteredData = initiatives;
+        let currentSort = 'default';
+
+        function updateStats() {
+            document.getElementById('totalCount').textContent = initiatives.length + '+';
+        }
 
         function renderCards() {
             const cardsGrid = document.getElementById('cardsGrid');
+            const noResults = document.getElementById('noResults');
+
+            if (filteredData.length === 0) {
+                cardsGrid.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
             cardsGrid.innerHTML = '';
 
-            filteredData.forEach((app, index) => {
+            filteredData.forEach((initiative, index) => {
                 const card = document.createElement('div');
-                card.className = `card ${app.category}`;
+                card.className = `card ${initiative.category}`;
+                
+                const categoryIcons = {
+                    education: 'graduation-cap',
+                    healthcare: 'heartbeat',
+                    housing: 'home',
+                    employment: 'briefcase',
+                    food: 'utensils',
+                    water: 'tint',
+                    agriculture: 'seedling',
+                    technology: 'laptop',
+                    social: 'hands-helping',
+                    environment: 'leaf',
+                    finance: 'coins',
+                    emergency: 'ambulance'
+                };
                 
                 card.innerHTML = `
                     <div class="card-header">
-                        <div class="record-number">#Record: ${recordCounter + index}</div>
-                        <div class="category">${app.category.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</div>
+                        <div class="record-number">
+                            <i class="fas fa-hashtag"></i>
+                            ${index + 1}
+                        </div>
+                        <div class="category-badge">
+                            <i class="fas fa-${categoryIcons[initiative.category]}"></i>
+                            ${initiative.category.charAt(0).toUpperCase() + initiative.category.slice(1)}
+                        </div>
                     </div>
-                    <h3>${app.title}</h3>
-                    <p>${app.summary}</p>
-                    <div class="impact-badge">${app.impact}</div>
+                    <h3><i class="fas fa-${initiative.icon} card-icon"></i>${initiative.title}</h3>
+                    <p class="card-description">${initiative.description}</p>
+                    <div class="impact-section">
+                        <div class="impact-badge">
+                            <i class="fas fa-chart-line"></i>
+                            ${initiative.impact}
+                        </div>
+                        <div class="beneficiary-count">
+                            <i class="fas fa-users"></i>
+                            ${initiative.beneficiaries}
+                        </div>
+                    </div>
                 `;
                 
                 cardsGrid.appendChild(card);
@@ -1010,22 +1509,42 @@
 
         function filterCards(category) {
             if (category === 'all') {
-                filteredData = appData;
+                filteredData = initiatives;
             } else {
-                filteredData = appData.filter(app => app.category === category);
+                filteredData = initiatives.filter(initiative => initiative.category === category);
             }
-            recordCounter = 1;
-            renderCards();
+            sortCards(currentSort);
         }
 
         function searchCards(query) {
             const searchTerm = query.toLowerCase();
-            filteredData = appData.filter(app => 
-                app.title.toLowerCase().includes(searchTerm) ||
-                app.summary.toLowerCase().includes(searchTerm) ||
-                app.category.toLowerCase().includes(searchTerm)
+            filteredData = initiatives.filter(initiative => 
+                initiative.title.toLowerCase().includes(searchTerm) ||
+                initiative.description.toLowerCase().includes(searchTerm) ||
+                initiative.category.toLowerCase().includes(searchTerm) ||
+                initiative.impact.toLowerCase().includes(searchTerm)
             );
-            recordCounter = 1;
+            sortCards(currentSort);
+        }
+
+        function sortCards(sortType) {
+            currentSort = sortType;
+            
+            switch(sortType) {
+                case 'alphabetical':
+                    filteredData.sort((a, b) => a.title.localeCompare(b.title));
+                    break;
+                case 'category':
+                    filteredData.sort((a, b) => a.category.localeCompare(b.category));
+                    break;
+                case 'impact':
+                    filteredData.sort((a, b) => b.impact.localeCompare(a.impact));
+                    break;
+                default:
+                    // Keep original order
+                    break;
+            }
+            
             renderCards();
         }
 
@@ -1038,12 +1557,43 @@
             });
         });
 
+        document.querySelectorAll('.sort-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                sortCards(btn.dataset.sort);
+            });
+        });
+
         document.getElementById('searchBox').addEventListener('input', (e) => {
             searchCards(e.target.value);
         });
 
-        // Initial render
-        renderCards();
+        // Initialize
+        updateStats();
+        setTimeout(() => {
+            renderCards();
+        }, 500);
+
+        // Add smooth scrolling for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
     </script>
 </body>
 </html>
