@@ -852,14 +852,464 @@
 
     <script>
         const initiatives = [
-            // EDUCATION INITIATIVES
+            // TEXTBOOK & EDUCATION SHARING
             {
                 title: "Textbook Exchange Network",
-                description: "Revolutionary digital marketplace facilitating seamless distribution of used textbooks from senior students to juniors at school level. This comprehensive platform promotes educational resource sharing, significantly reduces educational costs for families, and supports environmental sustainability through systematic reuse initiatives.",
+                description: "Digital marketplace facilitating distribution of used textbooks from seniors to juniors at school level, promoting reuse, affordability, and eco-conscious education through systematic resource sharing.",
                 category: "education",
                 impact: "Reduces education costs by 60%",
                 beneficiaries: "Projected: 50M Indian students",
                 icon: "book"
+            },
+            
+            // EMPLOYMENT & LABOR
+            {
+                title: "Daily Wage Worker Connect",
+                description: "Platform to digitally connect daily wage workers with task givers, enabling dignified, decentralized employment network across towns and villages with fairness in wages, transparency, and mutual respect.",
+                category: "employment",
+                impact: "Fair wages guaranteed",
+                beneficiaries: "Projected: 100M Indian workers",
+                icon: "hard-hat"
+            },
+            
+            // STUDENT MENTAL HEALTH
+            {
+                title: "Academic Stress Reduction Platform",
+                description: "Platform to reduce stress levels in school systems especially intermediate colleges where students go through severe stress to crack engineering or medicine seats through counseling and support.",
+                category: "healthcare",
+                impact: "85% stress reduction",
+                beneficiaries: "Projected: 15M students",
+                icon: "brain"
+            },
+            
+            // MEDICATION TRACKING
+            {
+                title: "Medication Side Effects Tracker",
+                description: "Humongous real-time tracking platform where users can login side effects they experience from medications, creating comprehensive health database for better treatment decisions.",
+                category: "healthcare",
+                impact: "Improved medication safety",
+                beneficiaries: "Projected: 200M patients",
+                icon: "pills"
+            },
+            
+            // MARRIAGE SUPPORT
+            {
+                title: "Inclusive Marriage Support",
+                description: "Platform to give helping hand to physically disabled and economically disadvantaged bride and bridegroom at their marriage venue, ensuring dignified celebrations.",
+                category: "social",
+                impact: "Dignified celebrations",
+                beneficiaries: "Projected: 2M couples annually",
+                icon: "heart"
+            },
+            
+            // AGRICULTURE & FARMING
+            {
+                title: "Quality Seeds Distribution Chain",
+                description: "Platform to create supply chain distributing quality seeds for various crops like paddy, groundnut, millets etc for poor disadvantaged farmers through verified suppliers.",
+                category: "agriculture",
+                impact: "40% yield increase",
+                beneficiaries: "Projected: 150M farmers",
+                icon: "seedling"
+            },
+            
+            {
+                title: "Borewell Feasibility Analyzer",
+                description: "Platform to enter soil composition and other metrics to see feasibility for borewell and digging borewell for disadvantaged farmers using AI and geological data.",
+                category: "agriculture",
+                impact: "80% drilling success rate",
+                beneficiaries: "Projected: 50M farmers",
+                icon: "tint"
+            },
+            
+            {
+                title: "Agri-Clinics Management Platform",
+                description: "Managing Agri-Clinics support at individual farmer level involving soil health, cropping practices, plant protection, post-harvest technology, prices for various crops - one stop robust solution.",
+                category: "agriculture",
+                impact: "Holistic farm support",
+                beneficiaries: "Projected: 200M farmers",
+                icon: "tractor"
+            },
+            
+            {
+                title: "Fertilizers Bank for Farmers",
+                description: "Platform to create fertilizers bank for disadvantaged farmers, enabling community sharing and access to quality fertilizers at affordable rates.",
+                category: "agriculture",
+                impact: "30% cost reduction",
+                beneficiaries: "Projected: 100M farmers",
+                icon: "leaf"
+            },
+            
+            // STREET VENDORS & WORKERS
+            {
+                title: "Street Cart Vendor Quarterly Gifts",
+                description: "Platform to provide street cart vendors a gift per quarter from willing rich people, improving their livelihood and business sustainability.",
+                category: "employment",
+                impact: "Quarterly income boost",
+                beneficiaries: "Projected: 10M vendors",
+                icon: "shopping-cart"
+            },
+            
+            {
+                title: "Auto Driver Quarterly Support",
+                description: "Platform to provide auto drivers a gift per quarter from willing rich people, supporting their families and vehicle maintenance needs.",
+                category: "employment",
+                impact: "Driver family support",
+                beneficiaries: "Projected: 5M drivers",
+                icon: "car"
+            },
+            
+            // TOY & CLOTHING REDISTRIBUTION
+            {
+                title: "Used Toys Redistribution",
+                description: "Platform to redistribute used toys (ages 2–5 & 5–9) to disadvantaged kids, promoting reuse and ensuring childhood joy for underprivileged children.",
+                category: "social",
+                impact: "Childhood development",
+                beneficiaries: "Projected: 100M children",
+                icon: "puzzle-piece"
+            },
+            
+            {
+                title: "Surplus Fruits Distribution",
+                description: "Platform to distribute surplus fruits from shops/street vendors to disadvantaged/orphanages/homeless, reducing waste and improving nutrition.",
+                category: "food",
+                impact: "Nutrition + waste reduction",
+                beneficiaries: "Projected: 50M people",
+                icon: "apple-alt"
+            },
+            
+            {
+                title: "Used Clothes Distribution Network",
+                description: "Platform to track & distribute used clothes via drop boxes, ensuring systematic clothing redistribution to families in need.",
+                category: "social",
+                impact: "Clothing accessibility",
+                beneficiaries: "Projected: 300M people",
+                icon: "tshirt"
+            },
+            
+            // DONATION & CHARITY
+            {
+                title: "Poor-Rich Donation Matching",
+                description: "Platform for poor to request money and rich to give, with leaderboard for donors ensuring transparent charitable giving and impact tracking.",
+                category: "finance",
+                impact: "Transparent charitable giving",
+                beneficiaries: "Projected: 500M people",
+                icon: "hand-holding-heart"
+            },
+            
+            {
+                title: "NGO Donation Logging",
+                description: "Donation logging leaderboard for ultra-rich NGOs, promoting transparency and competitive philanthropy for maximum social impact.",
+                category: "social",
+                impact: "NGO accountability",
+                beneficiaries: "Projected: All NGOs nationwide",
+                icon: "chart-line"
+            },
+            
+            // BUSINESS SUPPORT
+            {
+                title: "Cobbler Permanent Shop Support",
+                description: "Platform to support cobblers on roads to get permanent small shops, providing microfinance and business development assistance.",
+                category: "employment",
+                impact: "Permanent business setup",
+                beneficiaries: "Projected: 2M cobblers",
+                icon: "hammer"
+            },
+            
+            // CIVIC ENGAGEMENT
+            {
+                title: "Citizen Issue Reporting System",
+                description: "Platform to raise citizen issues to MLA/MLC/MP via ticketing system, ensuring democratic participation and government accountability.",
+                category: "social",
+                impact: "Democratic engagement",
+                beneficiaries: "Projected: 900M citizens",
+                icon: "vote-yea"
+            },
+            
+            // HEALTHCARE SUPPORT
+            {
+                title: "Patient Caretaker Fund",
+                description: "Platform to mobilize small funds for patient caretakers, memorial services, books, travel, sporting goods during medical crises.",
+                category: "healthcare",
+                impact: "Healthcare family support",
+                beneficiaries: "Projected: 25M families",
+                icon: "heart"
+            },
+            
+            {
+                title: "Blood Donation Network",
+                description: "Platform to receive donated blood from local banks with leaderboard for donors, ensuring efficient blood supply management.",
+                category: "healthcare",
+                impact: "Lives saved daily",
+                beneficiaries: "Projected: 100M patients",
+                icon: "tint"
+            },
+            
+            // ENVIRONMENTAL
+            {
+                title: "Village Plastic Recycling",
+                description: "Platform for recycling plastic/paper at village level with incentive system, creating environmental and economic benefits.",
+                category: "environment",
+                impact: "Environmental + economic benefits",
+                beneficiaries: "Projected: 600K villages",
+                icon: "recycle"
+            },
+            
+            {
+                title: "Village Water Supply Design",
+                description: "Platform to design safe drinking water supply for villages, ensuring sustainable water access through comprehensive planning.",
+                category: "water",
+                impact: "Clean water access",
+                beneficiaries: "Projected: 500M villagers",
+                icon: "tint"
+            },
+            
+            // EDUCATION FUNDING
+            {
+                title: "Education Fund for Poor Children",
+                description: "Platform for education fund sponsored by rich with leaderboard, ensuring comprehensive educational support for disadvantaged children.",
+                category: "education",
+                impact: "Education accessibility",
+                beneficiaries: "Projected: 200M children",
+                icon: "graduation-cap"
+            },
+            
+            // SANITATION
+            {
+                title: "Public Toilet Funding",
+                description: "Platform to identify places needing public toilets and get funds from rich with leaderboard, improving community sanitation.",
+                category: "water",
+                impact: "Improved sanitation",
+                beneficiaries: "Projected: 800M people",
+                icon: "restroom"
+            },
+            
+            // ORPHAN SUPPORT
+            {
+                title: "Orphan Children Support",
+                description: "Platform to support young children who lost both parents with leaderboard, providing comprehensive care and development.",
+                category: "social",
+                impact: "Orphan comprehensive care",
+                beneficiaries: "Projected: 30M orphans",
+                icon: "child"
+            },
+            
+            // VENDOR SUPPORT
+            {
+                title: "Push Cart Vendor Financing",
+                description: "Platform to mobilize funds to buy push carts for new vendors with leaderboard, enabling entrepreneurship for poor families.",
+                category: "employment",
+                impact: "New business creation",
+                beneficiaries: "Projected: 15M vendors",
+                icon: "shopping-cart"
+            },
+            
+            // INFRASTRUCTURE
+            {
+                title: "Rural Road Pothole Tracker",
+                description: "Platform to list rural road potholes and track resolution, ensuring improved connectivity and transportation safety.",
+                category: "social",
+                impact: "Rural connectivity",
+                beneficiaries: "Projected: 800M rural residents",
+                icon: "road"
+            },
+            
+            // ENERGY ACCESS
+            {
+                title: "Community Electricity Support",
+                description: "Platform for rich to pay poor communities' electricity bills as group, ensuring reliable energy access for households.",
+                category: "social",
+                impact: "Energy access",
+                beneficiaries: "Projected: 100M households",
+                icon: "bolt"
+            },
+            
+            // FISHERMEN SUPPORT
+            {
+                title: "Fishermen Off-Season Fund",
+                description: "Platform to support poor fishermen with basic living fund in off-season with leaderboard, ensuring year-round family sustenance.",
+                category: "employment",
+                impact: "Seasonal income security",
+                beneficiaries: "Projected: 15M fishermen",
+                icon: "fish"
+            },
+            
+            // MEDICAL PROCEDURES
+            {
+                title: "Cleft Surgery Sponsorship",
+                description: "Platform to sponsor cleft surgery for poor children, providing life-changing medical interventions and rehabilitation.",
+                category: "healthcare",
+                impact: "Life-changing surgeries",
+                beneficiaries: "Projected: 500K children",
+                icon: "user-md"
+            },
+            
+            {
+                title: "Holiday Adventure Lottery",
+                description: "Lottery-based holiday adventure trip for poor children by rich sponsors with leaderboard, providing memorable experiences.",
+                category: "social",
+                impact: "Childhood enrichment",
+                beneficiaries: "Projected: 5M children",
+                icon: "plane"
+            },
+            
+            // ENERGY & COOKING
+            {
+                title: "Cooking Gas Sponsorship",
+                description: "Platform to sponsor cooking gas cylinder to poor family with leaderboard, promoting clean cooking energy.",
+                category: "environment",
+                impact: "Clean cooking energy",
+                beneficiaries: "Projected: 200M families",
+                icon: "fire"
+            },
+            
+            // SCHOOL SUPPLIES
+            {
+                title: "School Uniforms Distribution",
+                description: "Platform to distribute school uniforms to children from poor neighborhoods with sponsors leaderboard.",
+                category: "education",
+                impact: "Educational dignity",
+                beneficiaries: "Projected: 150M students",
+                icon: "school"
+            },
+            
+            // ELDERLY TECH ACCESS
+            {
+                title: "Elderly Smartphone Program",
+                description: "Platform to distribute non-smartphones to elderly poor with 1-year subscription and sponsors leaderboard.",
+                category: "technology",
+                impact: "Elderly digital inclusion",
+                beneficiaries: "Projected: 50M elderly",
+                icon: "mobile-alt"
+            },
+            
+            // SPORTS EQUIPMENT
+            {
+                title: "Youth Sports Shoes",
+                description: "Platform to distribute sporting shoes to underprivileged village youth with sponsors leaderboard.",
+                category: "social",
+                impact: "Youth athletic development",
+                beneficiaries: "Projected: 100M youth",
+                icon: "running"
+            },
+            
+            // VOCATIONAL TRAINING
+            {
+                title: "Sewing Machine Training",
+                description: "Platform to provide 6-month sewing machine training and donate machines to unemployed poor.",
+                category: "employment",
+                impact: "Sustainable skill development",
+                beneficiaries: "Projected: 25M trainees",
+                icon: "cut"
+            },
+            
+            // HEALTH PROTECTION
+            {
+                title: "Mosquito Nets Distribution",
+                description: "Platform to distribute mosquito nets to poor neighborhoods, preventing vector-borne diseases.",
+                category: "healthcare",
+                impact: "Disease prevention",
+                beneficiaries: "Projected: 400M people",
+                icon: "shield-alt"
+            },
+            
+            // VISION CARE
+            {
+                title: "Free Eye Testing Program",
+                description: "Platform to support free eye testing and spectacles donation for poor with sponsors leaderboard.",
+                category: "healthcare",
+                impact: "Vision accessibility",
+                beneficiaries: "Projected: 300M people",
+                icon: "eye"
+            },
+            
+            // DENTAL CARE
+            {
+                title: "Free Dental Care",
+                description: "Platform to provide free dental checkups and procedures to poor with sponsors leaderboard.",
+                category: "healthcare",
+                impact: "Oral health accessibility",
+                beneficiaries: "Projected: 500M people",
+                icon: "tooth"
+            },
+            
+            // MOBILITY AIDS
+            {
+                title: "Wheelchair Distribution",
+                description: "Platform to provide free wheelchairs (motorized/non-motorized) to handicapped poor with sponsors leaderboard.",
+                category: "healthcare",
+                impact: "Mobility independence",
+                beneficiaries: "Projected: 50M disabled individuals",
+                icon: "wheelchair"
+            },
+            
+            // HEARING AIDS
+            {
+                title: "Hearing Aid Sponsorship",
+                description: "Platform to sponsor hearing aids for disadvantaged with hearing loss, with sponsors leaderboard.",
+                category: "healthcare",
+                impact: "Communication accessibility",
+                beneficiaries: "Projected: 75M people",
+                icon: "deaf"
+            },
+            
+            // RURAL SPORTS
+            {
+                title: "Rural Sports Equipment",
+                description: "Platform to sponsor sports equipment for rural poor kids with sponsors leaderboard.",
+                category: "social",
+                impact: "Rural youth development",
+                beneficiaries: "Projected: 200M rural children",
+                icon: "futbol"
+            },
+            
+            // FAMILY CRISIS
+            {
+                title: "Breadwinner Loss Support",
+                description: "Platform to support families in poor communities who lose their breadwinner with sponsors leaderboard.",
+                category: "social",
+                impact: "Family crisis recovery",
+                beneficiaries: "Projected: 20M families",
+                icon: "hands-helping"
+            },
+            
+            // ACCIDENT SUPPORT
+            {
+                title: "Accident Recovery Support",
+                description: "Platform to support poor families to overcome accident injury costs with sponsors leaderboard.",
+                category: "healthcare",
+                impact: "Accident recovery",
+                beneficiaries: "Projected: 10M families",
+                icon: "band-aid"
+            },
+            
+            // AUTISM SUPPORT
+            {
+                title: "Autism Family Support",
+                description: "Platform to support poor families affected by autism with sponsors leaderboard.",
+                category: "healthcare",
+                impact: "Autism family empowerment",
+                beneficiaries: "Projected: 5M families",
+                icon: "puzzle-piece"
+            },
+            
+            // SCHOLARSHIPS
+            {
+                title: "Village Education Scholarships",
+                description: "Scholarship for bright village poor children for higher education with sponsors leaderboard.",
+                category: "education",
+                impact: "Higher education access",
+                beneficiaries: "Projected: 50M students",
+                icon: "university"
+            },
+            
+            // HOUSING REPAIR
+            {
+                title: "Poor Home Repair Support",
+                description: "Platform to support repair of poor homes in backward communities with sponsors leaderboard.",
+                category: "housing",
+                impact: "Safe housing conditions",
+                beneficiaries: "Projected: 200M households",
+                icon: "home"
             },
             {
                 title: "Educational Sponsorship Network",
