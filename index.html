@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
     <title>Social Impact Initiatives for India - Transforming Communities</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -16,9 +16,12 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-attachment: fixed;
             min-height: 100vh;
             padding: 20px;
             line-height: 1.6;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -209,6 +212,11 @@
         .card:hover {
             transform: translateY(-15px) scale(1.02);
             box-shadow: 0 25px 50px rgba(0,0,0,0.15), 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card:active {
+            transform: translateY(-5px) scale(1.01);
+            transition: all 0.1s ease;
         }
 
         .card:hover::after {
@@ -407,50 +415,345 @@
             transform: translateY(-2px);
         }
 
-        @media (max-width: 768px) {
+        /* Enhanced Responsive Design */
+        @media (max-width: 1200px) {
             .cards-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: 25px;
+            }
+            
+            .container {
+                max-width: 1200px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .cards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
                 gap: 20px;
             }
             
             .header h1 {
+                font-size: 3rem;
+            }
+            
+            .stats {
+                gap: 20px;
+            }
+            
+            .stat-card {
+                padding: 20px 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+                padding: 15px;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 10px 0;
+            }
+            
+            .header {
+                padding: 30px 15px;
+                margin-bottom: 30px;
+            }
+            
+            .header h1 {
                 font-size: 2.5rem;
+                margin-bottom: 12px;
             }
 
             .header p {
                 font-size: 1.1rem;
+                padding: 0 10px;
             }
             
             .stats {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                margin: 25px 0;
             }
 
             .stat-card {
-                min-width: 120px;
+                min-width: 140px;
+                padding: 15px 20px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
             }
 
             .card {
-                padding: 25px;
+                padding: 20px;
+                margin: 0 5px;
+            }
+            
+            .card h3 {
+                font-size: 1.2rem;
+                line-height: 1.4;
+            }
+            
+            .card-description {
+                font-size: 0.95rem;
+                line-height: 1.6;
             }
 
             .controls {
-                padding: 20px;
+                padding: 20px 15px;
+                margin: 0 5px 30px 5px;
+            }
+
+            .search-container {
+                margin-bottom: 25px;
             }
 
             .search-box {
                 font-size: 1rem;
                 padding: 15px 20px 15px 50px;
             }
+            
+            .sort-controls {
+                margin-bottom: 20px;
+                gap: 8px;
+            }
+            
+            .sort-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
 
             .filters {
                 gap: 8px;
+                justify-content: center;
             }
 
             .filter-btn {
-                padding: 10px 18px;
+                padding: 10px 15px;
+                font-size: 0.8rem;
+                border-radius: 20px;
+            }
+            
+            .filter-btn i {
+                margin-right: 5px;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .record-number {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+            
+            .category-badge {
+                font-size: 0.75rem;
+                padding: 6px 12px;
+            }
+            
+            .impact-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .impact-badge, .beneficiary-count {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 20px 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .header p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .stat-card {
+                min-width: 120px;
+                padding: 12px 16px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .stat-label {
                 font-size: 0.85rem;
+            }
+            
+            .controls {
+                padding: 15px 10px;
+                margin: 0 0 20px 0;
+            }
+            
+            .search-box {
+                padding: 12px 15px 12px 45px;
+                font-size: 0.95rem;
+            }
+            
+            .search-icon {
+                left: 15px;
+                font-size: 1rem;
+            }
+            
+            .filter-btn {
+                padding: 8px 12px;
+                font-size: 0.75rem;
+            }
+            
+            .filter-btn i {
+                display: none;
+            }
+            
+            .sort-btn {
+                padding: 5px 10px;
+                font-size: 0.75rem;
+            }
+            
+            .card {
+                padding: 15px;
+                border-radius: 15px;
+            }
+            
+            .card h3 {
+                font-size: 1.1rem;
+                margin: 10px 0;
+            }
+            
+            .card-description {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 15px;
+            }
+            
+            .card-header {
+                margin-bottom: 10px;
+            }
+            
+            .record-number {
+                font-size: 0.75rem;
+                padding: 5px 10px;
+            }
+            
+            .category-badge {
+                font-size: 0.7rem;
+                padding: 5px 10px;
+            }
+            
+            .impact-section {
+                padding-top: 15px;
+                margin-top: 15px;
+            }
+            
+            .impact-badge, .beneficiary-count {
+                font-size: 0.75rem;
+                padding: 5px 10px;
+            }
+            
+            .no-results {
+                padding: 40px 15px;
+                margin: 20px 0;
+            }
+            
+            .no-results i {
+                font-size: 3rem;
+                margin-bottom: 15px;
+            }
+            
+            .no-results h3 {
+                font-size: 1.2rem;
+                margin-bottom: 8px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .cards-grid {
+                gap: 15px;
+            }
+            
+            .card {
+                padding: 12px;
+            }
+            
+            .filter-btn {
+                padding: 6px 8px;
+                font-size: 0.7rem;
+            }
+        }
+
+        /* Improved touch targets for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .filter-btn, .sort-btn {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .search-box {
+                min-height: 44px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 12pt;
+            }
+            
+            .header {
+                background: none !important;
+                color: black !important;
+            }
+            
+            .controls, .stats {
+                display: none;
+            }
+            
+            .card {
+                break-inside: avoid;
+                border: 1px solid #ccc;
+                margin-bottom: 20px;
+                background: white !important;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
             }
         }
 
