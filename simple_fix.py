@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+"""
+Simple fix for the JavaScript issues
+"""
+
+import re
+
+def simple_fix():
+    """Apply a simple, clean fix"""
+    
+    print("🔧 APPLYING SIMPLE FIX")
+    print("=" * 30)
+    
+    # Read the original working version and create a minimal clean version
+    minimal_html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -112,4 +126,15 @@
         renderCards();
     </script>
 </body>
-</html>
+</html>'''
+    
+    # Save the working version
+    with open('/workspace/index.html', 'w') as f:
+        f.write(minimal_html)
+    
+    print("✅ Created working minimal version")
+    print("📊 Website should now load with 985 initiatives")
+    print("🎯 First 50 initiatives will be displayed")
+
+if __name__ == "__main__":
+    simple_fix()
