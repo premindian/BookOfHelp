@@ -787,7 +787,7 @@
             
             <div class="stats">
                 <div class="stat-card">
-                    <span class="stat-number" id="totalCount">963</span>
+                    <span class="stat-number" id="totalCount">967</span>
                     <span class="stat-label">Unique Solutions</span>
                 </div>
                 <div class="stat-card">
@@ -862,25 +862,7 @@
                 icon: "book"
             },
             
-            
-            
-            {
-                title: "Street Children Education & Rehabilitation Platform",
-                description: "Child welfare platform connecting children in street situations with volunteer teachers, donor sponsors, educational resources, safe shelter options, skill development programs, and comprehensive rehabilitation services to transition them into formal education and stable living conditions.",
-                category: "education",
-                impact: "Comprehensive integrated solution",
-                beneficiaries: "Enhanced reach through consolidation",
-                icon: "hands-helping"
-            },
-{
-                title: "Rural Digital Knowledge & Library Network",
-                description: "Comprehensive educational platform mobilizing unused books, refurbished laptops, tablets, and digital resources from urban areas to establish well-equipped community libraries and learning centers in poor villages, with internet access and digital literacy programs.",
-                category: "education",
-                impact: "Comprehensive integrated solution",
-                beneficiaries: "Enhanced reach through consolidation",
-                icon: "hands-helping"
-            },
-// EMPLOYMENT & LABOR
+            // EMPLOYMENT & LABOR
             
             
             // STUDENT MENTAL HEALTH
@@ -1250,7 +1232,14 @@
             },
             
             // WATER FILTERS
-            ,
+            {
+                title: "Basic Water Filter Distribution",
+                description: "Platform to distribute free basic water filters to poor neighborhoods with sponsors leaderboard.",
+                category: "water",
+                impact: "Safe drinking water",
+                beneficiaries: "Projected: 800M people",
+                icon: "tint"
+            },
             
             // HOSPITAL UPGRADES
             {
@@ -1341,16 +1330,7 @@
                 icon: "chalkboard-teacher"
             },
             
-            
-            {
-                title: "Comprehensive Agri-Advisory & Clinic Platform",
-                description: "Holistic agricultural support platform providing individual farmer-level assistance including soil health analysis, cropping practices optimization, plant protection, post-harvest technology, market price guidance, weather alerts, and comprehensive farm management solutions through digital agri-clinics.",
-                category: "agriculture",
-                impact: "Comprehensive integrated solution",
-                beneficiaries: "Enhanced reach through consolidation",
-                icon: "hands-helping"
-            },
-// MEDICAL VISITS
+            // MEDICAL VISITS
             
             
             // COMMUNITY RECREATION
@@ -1375,7 +1355,14 @@
                 beneficiaries: "Projected: 600M people",
                 icon: "faucet"
             },
-       beneficiaries: "Projected: 50M rural youth",
+            
+            // URBAN JOB SUPPORT
+            {
+                title: "Urban Job Search Stipend",
+                description: "Platform to support unemployed village youth with 3-month stipend in cities to find jobs with sponsors leaderboard.",
+                category: "employment",
+                impact: "Rural-urban job transition",
+                beneficiaries: "Projected: 50M rural youth",
                 icon: "city"
             },
             
@@ -1625,7 +1612,14 @@
             },
             
             // RURAL LIBRARIES
-            ,
+            {
+                title: "Rural Libraries Initiative",
+                description: "Platform mobilizing unused books, old laptops, and tablets from cities to set up community libraries in poor villages, bridging knowledge gaps.",
+                category: "education",
+                impact: "Rural knowledge access",
+                beneficiaries: "Projected: 500M rural learners",
+                icon: "book"
+            },
             
             // FARMER WIDOW SUPPORT
             
@@ -1654,7 +1648,14 @@
             },
             
             // STREET CHILD EDUCATION
-            ,
+            {
+                title: "Street Child Education Platform",
+                description: "Platform connecting children begging on streets with volunteer teachers and donors who sponsor schooling, food, and uniforms.",
+                category: "education",
+                impact: "Street children rehabilitation",
+                beneficiaries: "Projected: 10M street children",
+                icon: "child"
+            },
             
             // RURAL TRANSPORT FOR PATIENTS
             {
@@ -2055,7 +2056,22 @@
                 beneficiaries: "Projected: 150M students nationwide",
                 icon: "tablet-alt"
             },
-            ,
+            {
+                title: "Rural Digital Knowledge Network",
+                description: "Comprehensive educational platform mobilizing unused books, refurbished laptops, tablets, and digital resources from urban areas to establish well-equipped community libraries and learning centers in poor villages.",
+                category: "education",
+                impact: "Rural knowledge access",
+                beneficiaries: "Projected: 300M rural learners",
+                icon: "wifi"
+            },
+            {
+                title: "Street Children Education Initiative",
+                description: "Child welfare platform connecting children found in street situations with volunteer teachers, donors, and comprehensive rehabilitation services including schooling, nutrition, healthcare, uniforms, and family reunification.",
+                category: "education",
+                impact: "Street children education",
+                beneficiaries: "Projected: 10M street children",
+                icon: "child"
+            },
             {
                 title: "Girls Education Empowerment Program",
                 description: "Gender equality platform specifically empowering girls in poor neighborhoods through comprehensive education support, scholarships, mentoring programs, safety measures, leadership training, and advocacy for equal opportunities.",
@@ -2104,6 +2120,14 @@
                 beneficiaries: "5M+ farmers",
                 icon: "tint"
             },
+            {
+                title: "Comprehensive Agricultural Advisory",
+                description: "Integrated farm management ecosystem providing soil health assessment, crop planning optimization, plant protection strategies, post-harvest technology guidance, real-time market prices, weather forecasting, and sustainable farming practices for individual farmer success and agricultural modernization.",
+                category: "agriculture",
+                impact: "Holistic farm optimization",
+                beneficiaries: "25M+ farmers",
+                icon: "tractor"
+            },
             
             
             {
@@ -2139,6 +2163,14 @@
                 impact: "80% success rate improvement",
                 beneficiaries: "1M+ farmers",
                 icon: "tint"
+            },
+            {
+                title: "Integrated Agricultural Advisory",
+                description: "Comprehensive farm management ecosystem covering soil health assessment, personalized crop planning, integrated pest management, post-harvest technology guidance, real-time market price information, weather forecasting, and sustainable farming practices for individual farmer success.",
+                category: "agriculture",
+                impact: "Holistic farm optimization",
+                beneficiaries: "5M+ farmers",
+                icon: "tractor"
             },
             
             {
@@ -10590,15 +10622,7 @@
                 beneficiaries: "All vulnerable populations across India",
                 icon: "fas fa-hands-helping"
             }
-            {
-                title: "Integrated Water Supply & Purification Network",
-                description: "Comprehensive water management platform ensuring safe drinking water access through tank installations, filtration systems, purification units, and distribution networks for poor communities. Includes maintenance, quality monitoring, and emergency water supply coordination.",
-                category: "infrastructure",
-                impact: "Comprehensive integrated solution",
-                beneficiaries: "Enhanced reach through consolidation",
-                icon: "hands-helping"
-            }
-                ];
+        ];
 
         let filteredData = initiatives;
         let currentSort = 'default';
