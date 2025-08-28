@@ -1,0 +1,196 @@
+#!/usr/bin/env python3
+"""
+Fix JavaScript errors in the HTML file
+"""
+
+import re
+
+def fix_javascript_errors():
+    """Fix broken JavaScript structure and malformed comments"""
+    
+    with open('/workspace/index.html', 'r') as f:
+        content = f.read()
+    
+    print("🔧 FIXING JAVASCRIPT ERRORS")
+    print("=" * 40)
+    
+    # Fix malformed comments that break JavaScript
+    fixes = [
+        # Fix the broken comment line
+        (
+            r'// VILLAGE TRADITIONAL KNOWLEDGE PRESERVATION// RURAL WATER QUALITY ASSURANCE',
+            '// RURAL WATER QUALITY ASSURANCE'
+        ),
+        # Fix other concatenated comment issues
+        (
+            r'// COMMUNITY AGRICULTURAL VALUE ADDITION// VILLAGE WOMEN HEALTH ADVOCACY',
+            '// VILLAGE WOMEN HEALTH ADVOCACY'
+        ),
+        (
+            r'// COMMUNITY RENEWABLE ENERGY STORAGE// VILLAGE YOUTH INNOVATION PROGRAM// RURAL HEALTH INFORMATION SYSTEM',
+            '// RURAL HEALTH INFORMATION SYSTEM'
+        ),
+        (
+            r'// VILLAGE DISASTER PREPAREDNESS TRAINING// RURAL TECHNOLOGY TRANSFER PROGRAM',
+            '// RURAL TECHNOLOGY TRANSFER PROGRAM'
+        ),
+        (
+            r'// COMMUNITY WATER HARVESTING EXPANSION// VILLAGE YOUTH LEADERSHIP NETWORK// RURAL HEALTHCARE UNIVERSAL ACCESS',
+            '// RURAL HEALTHCARE UNIVERSAL ACCESS'
+        ),
+        (
+            r'// COMMUNITY AGRICULTURAL TRANSFORMATION// VILLAGE WOMEN EMPOWERMENT ACCELERATOR',
+            '// VILLAGE WOMEN EMPOWERMENT ACCELERATOR'
+        ),
+        (
+            r'// COMMUNITY RENEWABLE ENERGY REVOLUTION// VILLAGE YOUTH INNOVATION ECOSYSTEM// RURAL HEALTH SYSTEM TRANSFORMATION',
+            '// RURAL HEALTH SYSTEM TRANSFORMATION'
+        ),
+        (
+            r'// VILLAGE TRADITIONAL WISDOM PRESERVATION// RURAL INFRASTRUCTURE SMART DEVELOPMENT// COMMUNITY WATER ECOSYSTEM RESTORATION',
+            '// COMMUNITY WATER ECOSYSTEM RESTORATION'
+        ),
+        (
+            r'// RURAL AGRICULTURAL INNOVATION NETWORK// COMMUNITY HEALTH EQUITY INITIATIVE// VILLAGE FINANCIAL SOVEREIGNTY PROGRAM// RURAL WASTE ZERO INITIATIVE',
+            '// RURAL WASTE ZERO INITIATIVE'
+        ),
+        (
+            r'// VILLAGE WOMEN LEADERSHIP REVOLUTION// RURAL HEALTHCARE INNOVATION HUB',
+            '// RURAL HEALTHCARE INNOVATION HUB'
+        ),
+        (
+            r'// COMMUNITY FOOD SOVEREIGNTY MOVEMENT// VILLAGE INFRASTRUCTURE INTELLIGENCE SYSTEM// RURAL WATER WISDOM NETWORK// COMMUNITY YOUTH TRANSFORMATION PROGRAM// VILLAGE AGRICULTURAL SOVEREIGNTY INITIATIVE',
+            '// VILLAGE AGRICULTURAL SOVEREIGNTY INITIATIVE'
+        ),
+        (
+            r'// COMMUNITY TECHNOLOGY SOVEREIGNTY// VILLAGE FOOD WISDOM PRESERVATION// RURAL SOCIAL TRANSFORMATION HUB',
+            '// RURAL SOCIAL TRANSFORMATION HUB'
+        ),
+        (
+            r'// COMMUNITY HEALTH SOVEREIGNTY PROGRAM// RURAL EMERGENCY RESILIENCE NETWORK',
+            '// RURAL EMERGENCY RESILIENCE NETWORK'
+        ),
+        (
+            r'// COMMUNITY EMPLOYMENT SOVEREIGNTY HUB// RURAL FOOD SYSTEM TRANSFORMATION',
+            '// RURAL FOOD SYSTEM TRANSFORMATION'
+        ),
+        (
+            r'// VILLAGE WISDOM COUNCIL NETWORK// COMMUNITY INFRASTRUCTURE SOVEREIGNTY',
+            '// COMMUNITY INFRASTRUCTURE SOVEREIGNTY'
+        ),
+        (
+            r'// VILLAGE HEALTH TRANSFORMATION INITIATIVE// COMMUNITY DISASTER SOVEREIGNTY NETWORK// RURAL ENVIRONMENTAL REGENERATION HUB',
+            '// RURAL ENVIRONMENTAL REGENERATION HUB'
+        ),
+        (
+            r'// VILLAGE YOUTH SOVEREIGNTY PROGRAM// COMMUNITY AGRICULTURAL WISDOM NETWORK// RURAL FINANCIAL SOVEREIGNTY REVOLUTION',
+            '// RURAL FINANCIAL SOVEREIGNTY REVOLUTION'
+        ),
+        (
+            r'// COMMUNITY SKILL SOVEREIGNTY NETWORK// RURAL TECHNOLOGY WISDOM INTEGRATION',
+            '// RURAL TECHNOLOGY WISDOM INTEGRATION'
+        ),
+        (
+            r'// COMMUNITY SOCIAL SOVEREIGNTY MOVEMENT// RURAL WATER SOVEREIGNTY ALLIANCE',
+            '// RURAL WATER SOVEREIGNTY ALLIANCE'
+        ),
+        (
+            r'// VILLAGE HEALTH SOVEREIGNTY COUNCIL// COMMUNITY EMERGENCY SOVEREIGNTY HUB',
+            '// COMMUNITY EMERGENCY SOVEREIGNTY HUB'
+        ),
+        (
+            r'// VILLAGE EMPLOYMENT SOVEREIGNTY COUNCIL// COMMUNITY AGRICULTURE SOVEREIGNTY ALLIANCE',
+            '// COMMUNITY AGRICULTURE SOVEREIGNTY ALLIANCE'
+        ),
+        (
+            r'// VILLAGE TECHNOLOGY SOVEREIGNTY COUNCIL// COMMUNITY FOOD SOVEREIGNTY ALLIANCE',
+            '// COMMUNITY FOOD SOVEREIGNTY ALLIANCE'
+        ),
+        (
+            r'// RURAL WISDOM SOVEREIGNTY NETWORK// VILLAGE UNIVERSAL SOVEREIGNTY PLATFORM// COMMUNITY TRANSFORMATION SOVEREIGNTY MOVEMENT// RURAL COMPLETE SOVEREIGNTY ECOSYSTEM',
+            '// RURAL COMPLETE SOVEREIGNTY ECOSYSTEM'
+        ),
+        (
+            r'// VILLAGE WATER ABUNDANCE INITIATIVE// COMMUNITY TECHNOLOGICAL RENAISSANCE// RURAL AGRICULTURAL PARADISE CREATION',
+            '// RURAL AGRICULTURAL PARADISE CREATION'
+        ),
+        (
+            r'// COMMUNITY HEALTH ABUNDANCE NETWORK// RURAL WATER HARMONY ECOSYSTEM',
+            '// RURAL WATER HARMONY ECOSYSTEM'
+        ),
+        (
+            r'// COMMUNITY EMERGENCY HARMONY NETWORK// RURAL ENVIRONMENTAL HARMONY MOVEMENT',
+            '// RURAL ENVIRONMENTAL HARMONY MOVEMENT'
+        ),
+        (
+            r'// VILLAGE FINANCIAL HARMONY HUB// COMMUNITY TECHNOLOGICAL PARADISE// RURAL HEALTH PARADISE ECOSYSTEM// VILLAGE WATER PARADISE INITIATIVE// COMMUNITY AGRICULTURAL RENAISSANCE// RURAL EMERGENCY PARADISE NETWORK',
+            '// RURAL EMERGENCY PARADISE NETWORK'
+        ),
+        (
+            r'// VILLAGE ENVIRONMENTAL RENAISSANCE// COMMUNITY EMPLOYMENT PARADISE',
+            '// COMMUNITY EMPLOYMENT PARADISE'
+        ),
+        (
+            r'// RURAL FOOD PARADISE ECOSYSTEM// VILLAGE SOCIAL PARADISE MOVEMENT',
+            '// VILLAGE SOCIAL PARADISE MOVEMENT'
+        ),
+        (
+            r'// RURAL COMPLETE PARADISE ECOSYSTEM// VILLAGE ULTIMATE TRANSFORMATION PLATFORM// COMMUNITY INFINITE POTENTIAL ACTIVATOR// RURAL PERFECT HARMONY GENERATOR',
+            '// RURAL PERFECT HARMONY GENERATOR'
+        ),
+        (
+            r'// COMMUNITY PERFECT WELLNESS SYSTEM// RURAL INFINITE ABUNDANCE CREATOR',
+            '// RURAL INFINITE ABUNDANCE CREATOR'
+        ),
+        (
+            r'// RURAL INFINITE WISDOM NETWORK// VILLAGE PERFECT INNOVATION HUB// COMMUNITY ULTIMATE ABUNDANCE MULTIPLIER',
+            '// COMMUNITY ULTIMATE ABUNDANCE MULTIPLIER'
+        ),
+        (
+            r'// COMMUNITY PERFECT LIFE ECOSYSTEM// RURAL ULTIMATE PARADISE GENERATOR',
+            '// RURAL ULTIMATE PARADISE GENERATOR'
+        ),
+        (
+            r'// VILLAGE ULTIMATE MIRACLE PLATFORM// COMMUNITY INFINITE LOVE ECOSYSTEM// RURAL PERFECT DIVINE HARMONY',
+            '// RURAL PERFECT DIVINE HARMONY'
+        ),
+        (
+            r'// VILLAGE ULTIMATE UNITY PLATFORM// COMMUNITY INFINITE PEACE ECOSYSTEM// RURAL PERFECT EVOLUTION ACCELERATOR',
+            '// RURAL PERFECT EVOLUTION ACCELERATOR'
+        )
+    ]
+    
+    # Apply all fixes
+    for old, new in fixes:
+        if old in content:
+            content = content.replace(old, new)
+            print(f"✅ Fixed: {old[:50]}...")
+    
+    # Clean up any remaining JSON syntax issues
+    content = re.sub(r',\s*,', ',', content)
+    content = re.sub(r',\s*\]', ']', content)
+    
+    # Count final initiatives
+    final_count = len(re.findall(r'title:\s*"', content))
+    
+    # Update the stat display
+    content = re.sub(
+        r'<span class="stat-number" id="totalCount">\d+</span>',
+        f'<span class="stat-number" id="totalCount">{final_count}</span>',
+        content
+    )
+    
+    # Save the fixed content
+    with open('/workspace/index.html', 'w') as f:
+        f.write(content)
+    
+    print(f"\n📊 JAVASCRIPT FIX SUMMARY")
+    print("-" * 30)
+    print(f"JavaScript errors fixed")
+    print(f"Final initiative count: {final_count}")
+    print(f"✅ Website should now load properly!")
+    
+    return final_count
+
+if __name__ == "__main__":
+    final_count = fix_javascript_errors()
